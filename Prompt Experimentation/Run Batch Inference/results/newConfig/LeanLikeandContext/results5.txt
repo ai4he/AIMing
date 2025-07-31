@@ -1,0 +1,63 @@
+Below is the prompt for result #5:
+Given the following objects, assumptions and context from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects
+G: A general graph.
+K_n: A complete graph with n vertices (i.e., every vertex is connected to every other vertex). This is the primary object of study.
+r: The number of colors used in an edge-coloring of a graph.
+n: The number of vertices in the complete graph K_n.
+Heterochromatic Tree: A tree where every edge has a different color. A single vertex is also considered a heterochromatic tree.
+ϕ (phi): A specific r-edge-coloring of a graph G, which is a function that assigns one of r colors to each edge.
+t_r(G) (Heterochromatic Tree Partition Number): The central parameter of study. It is the minimum integer p such that for any r-edge-coloring of the graph G, its vertices can be covered by at most p vertex-disjoint heterochromatic trees.
+t: An integer derived from r.
+f(r): A function that maps the number of colors r to the integer t, defined by the inequality t(t-1)/2 + 2 ≤ r ≤ (t+1)t/2 + 1.
+
+Assumptions
+Scope of r: The number of colors r is assumed to be in the range 2 ≤ r ≤ n(n-1)/2. The case r=1 is considered trivial. n(n-1)/2 is the total number of edges in K_n.
+Coloring Requirement: An r-edge-coloring means that each of the r colors is used at least once on some edge of the graph.
+Worst-Case Scenario: The value of t_r(G) is determined by the "worst-case" coloring. It is the maximum number of partitions required over all possible r-edge-colorings of the graph G.
+ 
+
+Here is the context directly proceeding the theorem you write:
+ rtex-disjoint heterochromatic trees. In \cite{chen},
+the authors determined the heterochromatic tree partition number
+of an $r$-edge-colored complete bipartite graph $K_{m,n}$. In this
+paper we consider an $r$-edge-colored complete graph $K_{n}$ and give
+the exact expression for its heterochromatic tree partition number. \\
+
+Before proceeding, we introduce some definitions and notations.
+Throughout this paper, we use $r$ to denote the number of the
+colors, and an $r$-edge-coloring of a graph $G$ means that each
+color appears at least once in $G$. Let $\phi$ be an
+$r$-edge-coloring of a graph $G$. For an edge $e\in E(G)$, denote
+by $\phi(e)$ the color of $e$. Denote by $t_r(G, \phi)$ the
+minimum positive integer $p$ such that under the $r$-edge-coloring
+$\phi$, the vertices of $G$ can be covered by at most $p$
+vertex-disjoint heterochromatic trees. Clearly, $t_r(G)=\max
+_{\phi} t_r(G, \phi)$, where $\phi$ runs over all
+$r$-edge-colorings of the graph $G$. Let $\phi$ be an
+$r$-edge-coloring of the graph $G$ and $F$ be a spanning forest of
+$G$, each component of which is a heterochromatic tree. If $F$
+contains exactly $t_r(G, \phi)$ components, then $F$ is called an
+{\it optimal heterochromatic tree partition} of the graph $G$ with
+edge-coloring $\phi$. Note that a tree consisting of a single
+vertex is also regarded as a heterochromatic tree. \\
+
+For any integer $r\geq 2$, there is a unique positive integer $t$,
+such that ${t\choose 2} +2\leq r\leq {{t+1}\choose 2} +1$.
+Clearly, the integer $t$ is determined completely by $r$, and here
+we denote it by $f(r)=t$. This integer $f(r)=t$ will play an
+important role in expressing the number $t_r(K_n)$. If the color
+number $r=1$, clearly a maximum matching (plus a single vertex
+when $n$ is odd) in $K_n$ is an optimal heterochromatic tree
+partition, and then $t_r(K_n)=\lceil \frac{n}{2} \rceil$. So, in
+the rest of this paper we only consider the case $2\leq r\leq
+{n\choose 2}$. The following is the main result of this paper.  
+
+
+
+--- Model Generation for result #5 ---
+\label{maintheorem}
+If $2\leq r\leq {n\choose 2}$, then $t^2-t-2n+8\leq t_r(K_n)\leq
+t^2-t+5$, where $t=f(r)$.

@@ -1,0 +1,62 @@
+Below is the prompt for result #4:
+You are a mathematician specializing in random matrix theory and additive combinatorics. Your task is to read the provided mathematical context and generate a plausible, non-trivial theorem or conjecture that logically follows from it. To ensure you understand the specific vocabulary, use the following definitions.
+
+\subsection*{Definitions}
+egin{enumerate}
+    \item 	extbf{Discrete Random Matrix $M_n$}: Let $n$ be a large integer and $M_n$ be an $n$ by $n$ random matrix whose entries are independent (but not necessarily identically distributed) discrete random variables taking values in the complex numbers.
+    \item 	extbf{Bernoulli Random Matrix $M_{\pm 1,n}$}: The specific case where each entry is chosen independently and uniformly from $\{-1, +1\}$ (i.e., with probability 1/2 for each value).
+    \item 	extbf{Singularity Probability}: The probability that a random matrix $M_n$ is singular, i.e., $\Pr(\det(M_n) = 0)$.
+\end{enumerate}
+
+\subsection*{Mathematical Context}
+  entries of $M_n$ satisfy this property, then
+the probability that $M_n$ is singular is at most $\lt(p^{1/r} + o(1)\rt)^n$.
+All of the results in this paper hold for any characteristic zero integral
+domain replacing the complex numbers.
+
+
+In the special case where the entries of $M_n$ are  ``fair coin flips''
+(taking the values $+1,-1$ each with probability $1/2$), our general bound
+implies that the probability that $M_n$ is singular is at most
+$\lt(\frac{1}{\sqrt2}+o(1)\rt)^n$, improving on the previous best upper bound
+of $\lt(\frac{3}{4}+o(1)\rt)^n$, proved by Tao and Vu \cite{TV2}.
+
+
+In the special case where the entries of $M_n$ are  ``lazy coin flips''
+(taking values $+1,-1$ each with probability $1/4$ and value 0 with probability $1/2$), our general bound implies  that
+the probability that $M_n$ is singular is at most
+$\lt(\frac{1}{2}+o(1)\rt)^n$, which is asymptotically sharp.
+
+Our method is a refinement of those  from \cite{KKS} and \cite{TV2}. In
+particular,  we  make a critical use of the Structure Theorem from
+\cite{TV2}, which was obtained using tools from additive combinatorics.
+
+  \end{abstract}
+
+\section {Introduction}\label{s:intro}
+
+Let $n$ be a large integer and $M_n$ be an $n$ by $n$ random matrix whose
+entries are independent (but not necessarily identically distributed) discrete
+random variables taking values in the complex numbers. The problem of
+estimating the probability that $M_{n}$ is singular is a basic problem in the
+theory of random matrices and combinatorics.  The goal of this paper is to
+give a bound that applies to a large variety of distributions. The general
+statement (Theorem~\ref{main theorem}) is a bit technical, so we will first
+discuss a few corollaries concerning special cases.
+
+
+The most famous special  case is when the entries of $M_{n}$ are
+independent identically distributed (i.i.d.) Bernoulli random variables
+(taking values $\pm 1$ with probability $1/2$). The following conjecture has
+been open for quite some time: 
+
+
+Task:
+Based on the definitions and context above, state and rigorously formulate a new theorem or conjecture.
+
+
+--- Model Generation for result #4 ---
+\label{conjecture}
+Let $M_{\pm 1,n}$ be an $n \times n$ random matrix with i.i.d. Bernoulli
+entries. Then,
+$$\Pr(\det(M_{\pm 1,n}) = 0) \le \left( \frac{1}{\sqrt{2}} + o(1) \right)^n.$$

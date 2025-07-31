@@ -1,0 +1,174 @@
+Below is the prompt for result #1:
+Given the following abstarct from a math paper please write a theorem that could be useful in proving the paper.
+    
+    Here is your abstarct:
+ Suppose N is a phylogenetic network indicating a complicated relationship
+among individuals and taxa. Often of interest is a much simpler network, for
+example, a species tree T, that summarizes the most fundamental relationships.
+The meaning of a species tree is made more complicated by the recent discovery
+of the importance of hybridizations and lateral gene transfers. Hence it is
+desirable to describe uniform well-defined procedures that yield a tree given a
+network N. A useful tool toward this end is a connected surjective digraph
+(CSD) map f from N to N' where N' is generally a much simpler network than N. A
+set W of vertices in N is "restricted" if there is at most one vertex from
+which there is an arc into W, thus yielding a bottleneck in N. A CSD map f from
+N to N' is "restricted" if the inverse image of each vertex in N' is restricted
+in N. This paper describes a uniform procedure that, given a network N, yields
+a well-defined tree called the "restricted tree" of N. There is a restricted
+CSD map from N to the restricted tree. Many relationships in the tree can be
+proved to appear also in N. 
+    
+      
+    
+    Here are some related theorems from the paper or related sources to consider when writing your theorem:
+
+%3.1
+A restricted set $B$ is closed.
+
+
+
+%Lemma 3.2.
+Let $N=(V,A,r,X)$ be an acyclic $X$-network.  Suppose $B$ is restricted and $r \notin B$.  For every $b \in B$ there is a directed path from $Anc(B)$ to $b$ such that all vertices on the path except $Anc(B)$ itself lie in $B$.
+
+
+%3.4
+Suppose $B$ and $C$ are restricted sets and there is an arc $(b,c)$ with $b \in B$ and $c \in C$.  Then $B \cup C$ is restricted.
+%If $r \notin B$ then  $Anc(B \cup C) = Anc(B)$.
+ 
+
+    
+Task:
+Based on the theorems and abstarct above, state and rigorously formulate a new theorem or conjecture.
+
+--- Model Generation for result #1 ---
+### 1. Understanding the Abstract and Theorems
+
+First, let's summarize the abstract and the key parts of the paper that are relevant for our task.
+
+**Abstract Summary:**
+- We are given a complex phylogenetic network `N` that represents relationships among individuals and taxa.
+- A species tree `T` is a much simpler network that summarizes the most fundamental relationships.
+- The network `N` is "surjective" onto `T` via a connected surjective digraph map `f` (CSD map).
+- A set `W` of vertices in `N` is "restricted" if there is at most one vertex from which there is an arc into `W`.
+- A CSD map `f` from `N` to `N'` is "restricted" if the inverse image of each vertex in `N'` is restricted in `N`.
+- The paper describes a uniform procedure to find a tree called the "restricted tree" of `N` from `N`.
+- There is a restricted CSD map from `N` to the restricted tree.
+- Many relationships in the tree appear in `N`.
+
+**Key Theorems from the Abstract:**
+
+1. **Definition of Restricted Set (`B`):**
+   - A set `B` is restricted if for every `b ∈ B`, there is at most one vertex `u` such that there is an arc `(u, b)` in `N`.
+
+2. **Lemma 3.2:**
+   - If `B` is restricted and `r ∉ B`, then for every `b ∈ B`, there is a directed path from `Anc(B)` to `b` such that all vertices on the path except `Anc(B)` lie in `B`.
+
+3. **Lemma 3.4 (Restriction of Union):**
+   - If `B` and `C` are restricted, and there is an arc `(b, c)` with `b ∈ B` and `c ∈ C`, then `B ∪ C` is restricted.
+   - Moreover, if `r ∉ B`, then `Anc(B ∪ C) = Anc(B)`.
+
+### 2. Formulating a New Theorem
+
+From the above, we can see that the notion of a restricted set plays a key role. Let's think about how we can generalize or reformulate one of the given theorems into a new theorem.
+
+**New Theorem Idea:**
+
+**Theorem:** If `B` is a restricted set in a network `N`, then for any `b ∈ B`, `b` has a unique parent if and only if `N` is a binary tree.
+
+**Proof Sketch:**
+1. If `N` is a binary tree, then all non-root vertices have exactly one parent, so the condition holds.
+2. The converse is not true, as the condition is implied by the restrictedness of `B`, not the entire network.
+
+But this is too broad. Instead, let's try to formalize the notion of a restricted set into a property of the network.
+
+**Revised New Theorem Idea:**
+
+**Theorem:** If `B` is a restricted set in a network `N`, then the set of vertices in `B` that are not roots (if any) can be partitioned into subsets where each subset is a complete binary subtree.
+
+**Proof Sketch:**
+1. From Lemma 3.2, for each `b ∈ B`, there is a directed path from `Anc(B)` to `b` where all intermediate vertices are in `B`.
+2. This path resembles a branch in a binary tree.
+3. Since `B` is restricted, the structure of the paths will be constrained, leading to a complete binary subtree.
+
+### 3. Formalizing the New Theorem
+
+Here's a formalization of the new theorem:
+
+**Theorem:** For any restricted set `B` in a phylogenetic network `N`, the set `B` can be partitioned into pairwise disjoint subsets `{S_i}` such that each `S_i` is a complete binary subtree rooted at some vertex `v_i ∈ B` (i.e., `v_i` has exactly two children in `S_i`).
+
+**Proof Sketch:**
+1. From Lemma 3.2, for each `b ∈ B`, there is a unique `Anc(B)` (since `B` is restricted) and a directed path from `Anc(B)` to `b` within `B`.
+2. Since the network is binary (implied by the restricted set), the path must branch into two directions at each `b ∈ B`.
+3. This implies that `B` can be partitioned into complete binary subtrees rooted at vertices in `B`.
+
+### 4. Final Theorem
+
+**Theorem:** Let `N` be a phylogenetic network and `B` a restricted set in `N`. Then `B` can be partitioned into pairwise disjoint subsets `{S_i}` such that each `S_i` is a complete binary subtree rooted at some vertex `v_i ∈ B`.
+
+**Proof Sketch:**
+1. For each `b ∈ B`, there is a unique "parent" `u` (from Lemma 3.2) and a directed path from `u` to `b` within `B`.
+2. Since `B` is restricted, the network structure restricts the branching to exactly two out-arcs from each `b ∈ B`.
+3. Thus, `B` can be partitioned into complete binary subtrees.
+
+### 5. Example Network to Illustrate
+
+To illustrate, consider the following restricted set `B` in a binary tree:
+
+```
+  v0
+ /  \
+v1  v2
+ \  /
+ v3
+```
+
+Here, `B = {v1, v2, v3}`. Applying our theorem:
+- For `v1` and `v2`, the parent is `v0`, and the branch is `v0 -> v1` and `v0 -> v2`.
+- For `v3`, the parent is `v1` or `v2` (depending on the arc), but the restricted set ensures only one parent per `B`.
+
+This example suggests that the partition is valid.
+
+### 6. Abstract Plan
+
+1. **Restricted Set Definition:** A set `B` is restricted if for every `b ∈ B`, there is at most one `u` such that `(u, b)` is an arc.
+2. **Lemma 3.2 Implication:** For each `b ∈ B`, there is a unique `Anc(B)` and a path from `Anc(B)` to `b` within `B`.
+3. **Binary Network Structure:** Since `B` is restricted, the network structure is constrained, allowing `B` to be partitioned into complete binary subtrees.
+
+### 7. Lean4 Formalization (Abstract Plan)
+
+Here is the abstract plan for Lean4:
+
+```lean4
+theorem restricted_partition (N : PhylogeneticNetwork) (B : Set N.vertices) 
+  (hB_restricted : IsRestricted B) : ∃ (S : Set (Subtree N)), 
+  (∀ s ∈ S, IsCompleteBinarySubtree s) ∧ B = ⋃ s ∈ S, s.vertices := by
+  sorry
+```
+
+**Explanation:**
+- `N` is the phylogenetic network.
+- `B` is a restricted set in `N`.
+- `Subtree N` is the set of subtrees of `N`.
+- `IsCompleteBinarySubtree` is a property asserting that the subtree is a complete binary subtree.
+- The theorem states that `B` can be partitioned into complete binary subtrees.
+
+### Complete Lean4 Proof Sketch
+
+```lean4
+theorem restricted_partition (N : PhylogeneticNetwork) (B : Set N.vertices) 
+  (hB_restricted : IsRestricted B) : ∃ (S : Set (Subtree N)), 
+  (∀ s ∈ S, IsCompleteBinarySubtree s) ∧ B = ⋃ s ∈ S, s.vertices := by
+  have h_root_not_in_B : N.root ∉ B := by sorry
+  have hB_nonempty : B.Nonempty := by sorry
+  have h_exists_path : ∀ b ∈ B, ∃ (p : List N.vertices), p.head! = N.root ∧ p.getLast (by sorry) = b ∧ ∀ x ∈ p, x ∈ B := by sorry
+  have h_partition : ∃ (S : Set (Subtree N)), (∀ s ∈ S, IsCompleteBinarySubtree s) ∧ B = ⋃ s ∈ S, s.vertices := by sorry
+  sorry
+```
+
+### Explanation of Lean4 Sketch:
+1. `h_root_not_in_B`: The root cannot be in `B` because `B` is restricted.
+2. `hB_nonempty`: `B` is nonempty since it's a restricted set and `N` is a network.
+3. `h_exists_path`: For each `b ∈ B`, there is a path from the root to `b` entirely contained in `B`.
+4. `h_partition`: The set `B` can be partitioned into complete binary subtrees.
+
+Each `have` statement represents a key step in the proof, and the `sorry` indicates that the details are omitted for brevity. The final `sorry` would be replaced with the actual proof of `h_partition`.

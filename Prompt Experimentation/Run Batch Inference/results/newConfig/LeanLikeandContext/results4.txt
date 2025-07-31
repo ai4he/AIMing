@@ -1,0 +1,73 @@
+Below is the prompt for result #4:
+Given the following objects, assumptions and context from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+ Mathematical Objects
+n: A large integer representing the dimension of the matrices.
+M_n: An n x n complex matrix whose entries are independent discrete random variables. This is the main object of study.
+Singular Matrix: A square matrix whose determinant is zero. The probability of this event is the central quantity to be bounded.
+p: A constant between 0 and 1, representing an upper bound on the probability that a random variable takes any single value.
+r: A constant positive integer, used as an exponent in the main property definition.
+p-bounded of exponent r: A key technical property defined for the distribution of the random entries of the matrix M_n. A random variable ξ is p-bounded of exponent r if there is no value z_0 such that P(ξ = z_0) > p, and for any r distinct values z_1, ..., z_r, the probability P(ξ ∈ {z_1, ..., z_r}) is bounded away from 1 by a constant.
+Integral Domain of Characteristic Zero: An algebraic structure (like the integers or complex numbers) where the main results hold.
+
+Assumptions
+Large n: The results are asymptotic, holding as n (the matrix dimension) tends to infinity.
+Independent Entries: The entries of the random matrix M_n are assumed to be mutually independent random variables. They are not required to be identically distributed.
+Discrete Distribution: The random entries of M_n take values from a discrete set of complex numbers.
+p-bounded Property: The main theorem assumes that the distributions of the matrix entries satisfy the p-bounded of exponent r property for some constants p and r. This property ensures that the random variables are "not too concentrated" on any single value or on any small set of values.
+
+Here is the context directly proceeding the theorem you write:
+ entries of $M_n$ satisfy this property, then
+the probability that $M_n$ is singular is at most $\lt(p^{1/r} + o(1)\rt)^n$.
+All of the results in this paper hold for any characteristic zero integral
+domain replacing the complex numbers.
+
+
+In the special case where the entries of $M_n$ are  ``fair coin flips''
+(taking the values $+1,-1$ each with probability $1/2$), our general bound
+implies that the probability that $M_n$ is singular is at most
+$\lt(\frac{1}{\sqrt2}+o(1)\rt)^n$, improving on the previous best upper bound
+of $\lt(\frac{3}{4}+o(1)\rt)^n$, proved by Tao and Vu \cite{TV2}.
+
+
+In the special case where the entries of $M_n$ are  ``lazy coin flips''
+(taking values $+1,-1$ each with probability $1/4$ and value 0 with probability $1/2$), our general bound implies  that
+the probability that $M_n$ is singular is at most
+$\lt(\frac{1}{2}+o(1)\rt)^n$, which is asymptotically sharp.
+
+Our method is a refinement of those  from \cite{KKS} and \cite{TV2}. In
+particular,  we  make a critical use of the Structure Theorem from
+\cite{TV2}, which was obtained using tools from additive combinatorics.
+
+  \end{abstract}
+
+\section {Introduction}\label{s:intro}
+
+Let $n$ be a large integer and $M_n$ be an $n$ by $n$ random matrix whose
+entries are independent (but not necessarily identically distributed) discrete
+random variables taking values in the complex numbers. The problem of
+estimating the probability that $M_{n}$ is singular is a basic problem in the
+theory of random matrices and combinatorics.  The goal of this paper is to
+give a bound that applies to a large variety of distributions. The general
+statement (Theorem~\ref{main theorem}) is a bit technical, so we will first
+discuss a few corollaries concerning special cases.
+
+
+The most famous special  case is when the entries of $M_{n}$ are
+independent identically distributed (i.i.d.) Bernoulli random variables
+(taking values $\pm 1$ with probability $1/2$). The following conjecture has
+been open for quite some time: 
+
+
+
+--- Model Generation for result #4 ---
+[Conjecture 1.1 of \cite{TV2}]
+\label{t:tvconj}
+Let $M_{n}$ be an $n$ by $n$ random matrix whose entries are i.i.d.
+Bernoulli random variables (taking values $\pm 1$ with probability $1/2$).
+Then as $n \rightarrow \infty$, we have
+\[
+\Pr(M_{n} \text{ is singular}) \leq \left(\frac{3}{4}+o(1)\right)^{n}
+\]
+where the implied constant is absolute.

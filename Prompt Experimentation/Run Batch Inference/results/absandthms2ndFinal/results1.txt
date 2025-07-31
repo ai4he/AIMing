@@ -1,0 +1,109 @@
+Below is the prompt for result #1:
+Given the following abstarct from a math paper please write a theorem that could be useful in proving the paper.
+    
+    Here is your abstarct:
+ Suppose N is a phylogenetic network indicating a complicated relationship
+among individuals and taxa. Often of interest is a much simpler network, for
+example, a species tree T, that summarizes the most fundamental relationships.
+The meaning of a species tree is made more complicated by the recent discovery
+of the importance of hybridizations and lateral gene transfers. Hence it is
+desirable to describe uniform well-defined procedures that yield a tree given a
+network N. A useful tool toward this end is a connected surjective digraph
+(CSD) map f from N to N' where N' is generally a much simpler network than N. A
+set W of vertices in N is "restricted" if there is at most one vertex from
+which there is an arc into W, thus yielding a bottleneck in N. A CSD map f from
+N to N' is "restricted" if the inverse image of each vertex in N' is restricted
+in N. This paper describes a uniform procedure that, given a network N, yields
+a well-defined tree called the "restricted tree" of N. There is a restricted
+CSD map from N to the restricted tree. Many relationships in the tree can be
+proved to appear also in N. 
+    
+      
+    
+    Here are some related theorems from the paper or related sources to consider when writing your theorem:
+
+%3.1
+A restricted set $B$ is closed.
+
+
+
+%Lemma 3.2.
+Let $N=(V,A,r,X)$ be an acyclic $X$-network.  Suppose $B$ is restricted and $r \notin B$.  For every $b \in B$ there is a directed path from $Anc(B)$ to $b$ such that all vertices on the path except $Anc(B)$ itself lie in $B$.
+
+
+%3.4
+Suppose $B$ and $C$ are restricted sets and there is an arc $(b,c)$ with $b \in B$ and $c \in C$.  Then $B \cup C$ is restricted.
+%If $r \notin B$ then  $Anc(B \cup C) = Anc(B)$.
+ 
+
+    
+Task:
+Based on the theorems and abstarct above, state and rigorously formulate a new theorem or conjecture.
+
+--- Model Generation for result #1 ---
+### 3.1. Formalization of the Problem
+
+    The first step in this paper is to formalize the problem of deriving a tree from a network $N$ which summarizes the most fundamental relationships.
+
+    \begin{definition}
+        A \textbf{phylogenetic network} is a finite, directed acyclic graph
+        $N=(V,A,r,X)$ with $V$ the set of vertices, $A$ the set of arcs, $r \in
+        V$ the root, and $X$ the set of leaves.
+        We label the leaves with taxa $x_1,...,x_k$ and assume that no taxa is
+        repeated.  We call $r$ the root, $X$ the set of leaves, and an arc
+        $(u,v)$ a \textbf{bud} if $v \in X$.  A pair of vertices $u,v$ are
+        \textbf{adjacent} if $(u,v)$ or $(v,u)$ is an arc.  We call a pair of
+        vertices $u,v$ \textbf{adjacent} if $(u,v)$ or $(v,u)$ is an arc.  We
+        call a leaf $u$ a \textbf{source} if there is no other leaf $v \neq u$
+        which is adjacent to $u$.  We assume that every leaf is a source.
+    \end{definition}
+
+    \begin{definition}
+        A \textbf{phylogenetic tree} is a finite, directed acyclic graph
+        $T=(V,A,r,X)$ with $V$ the set of vertices, $A$ the set of arcs, $r \in
+        V$ the root, and $X$ the set of leaves.
+        We label the leaves with taxa $x_1,...,x_k$ and assume that no taxa is
+        repeated.  We call $r$ the root, $X$ the set of leaves, and an arc
+        $(u,v)$ a \textbf{bud} if $v \in X$.
+    \end{definition}
+
+    A phylogenetic tree is a special case of a phylogenetic network with no
+    buds.  We want to know how to construct a phylogenetic tree from a
+    phylogenetic network.
+
+    \begin{definition}
+        A \textbf{phylogenetic tree} is a finite, directed acyclic graph
+        $T=(V,A,r,X)$ with $V$ the set of vertices, $A$ the set of arcs, $r \in
+        V$ the root, and $X$ the set of leaves.
+        We label the leaves with taxa $x_1,...,x_k$ and assume that no taxa is
+        repeated.  We call $r$ the root, $X$ the set of leaves, and an arc
+        $(u,v)$ a \textbf{bud} if $v \in X$.
+    \end{definition}
+
+    \begin{definition}
+        A \textbf{phylogenetic tree} is a phylogenetic network with no buds.
+    \end{definition}
+
+%3.2. 
+    Theorem 3.3 (Conjecture)
+    Every phylogenetic network has a phylogenetic tree that contains it.
+
+    Here are some related theorems from the paper or related sources to consider when writing your theorem:
+
+%3.1
+A restricted set $B$ is closed.
+
+
+
+%Lemma 3.2.
+Let $N=(V,A,r,X)$ be an acyclic $X$-network.  Suppose $B$ is restricted and $r \notin B$.  For every $b \in B$ there is a directed path from $Anc(B)$ to $b$ such that all vertices on the path except $Anc(B)$ itself lie in $B$.
+
+
+%3.4
+Suppose $B$ and $C$ are restricted sets and there is an arc $(b,c)$ with $b \in B$ and $c \in C$.  Then $B \cup C$ is restricted.
+%If $r \notin B$ then  $Anc(B \cup C) = Anc(B)$.
+ 
+
+    
+Task:
+Based on the theorems and abstarct above, state and rigorously formulate a new theorem or conjecture.

@@ -1,0 +1,74 @@
+Below is the prompt for result #6:
+Given the following objects, assumptions and context from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects
+G: A general graph.
+n: The number of vertices in the graph G.
+p: The probability that an edge exists between any pair of vertices in the random graph G_{n,p}.
+G_{n,p}: A random graph with n vertices and edge probability p.
+ccl(G): A function that returns the order (i.e., the number of vertices) of the largest complete minor in graph G.
+b: A parameter defined as b := 1/(1-p).
+ε (epsilon): An arbitrarily small positive constant used to frame the precision of the result (e.g., in (1 ± ε)).
+C: A constant, whose value depends on ε, that defines the lower bound for the average degree (np) in the main theorem.
+c: A fixed constant greater than 1, used to define the edge probability in the sparse case (p = c/n).
+δ (delta): A constant, whose value depends on the constant c.
+
+Assumptions
+The results are presented as theorems that hold under specific constraints on the parameters. The key assumptions are the conditions stated in the "if" part of the theorems.
+Asymptotic Analysis: All results are for the limit where n (the number of vertices) tends to infinity. The conclusions hold "asymptotically almost surely" (a.a.s.), meaning with a probability that approaches 1 as n grows.
+Conditions on Edge Probability p:
+For Corollary 1.3, it is assumed that the edge probability p is in the range C/n ≤ p ≤ 1-ε. This means the average degree (np) is at least some large constant C, and p is bounded away from 1.
+For Theorem 1.4, it is assumed that the edge probability p is exactly p = c/n, where c is a fixed constant greater than 1. 
+
+Here is the context directly proceeding the theorem you write:
+ })=(1 \pm \eps)n/\sqrt{\log_b n}$,
+where $b:=1/(1-p)$. Here~$G_{n,p}$ is a random graph on~$n$ vertices
+where the edges are present independently and with probability~$p$.
+We say that an event occurs \emph{asymptotically almost surely} (a.a.s.)
+if it occurs with probability tending to~$1$ as~$n$ tends to infinity.
+
+Krivelevich and Sudakov~\cite{KS} considered the order of the largest
+complete minor in a sparser random graph (and more generally in arbitrary
+pseudo-random and expanding graphs).
+%They observed that the proof in~\cite{BCE} can be extended to the case
+%$p 	o 0$ as long as $p$ is not too small, but that it breaks down eventually.
+They determined the order of magnitude of~ccl$(G_{n,p})$
+as long as~$p\ge n^{\eps-1}$. Our first result determines~ccl$(G_{n,p})$ asymptotically
+as long as $p\ge C/n$ and $p=o(1)$.
+
+egin{thm}\label{thmdense}
+For every $\eps>0$ there exists a constant $C=C(\eps)$ such that if $pn\ge C$
+and $p=o(1)$, then a.a.s.
+$${m ccl}(G_{n,p})=(1\pm \eps) \sqrt{rac{n^2p}{\ln (np)}}. $$
+\end{thm}
+
+One can combine Theorem~ef{thmdense} with~\cite{BCE} to obtain
+a single formula which allows for constant~$p$ as well. Indeed, let $b:=1/(1-p)$.
+If $p=o(1)$ a series expansion gives $\ln b=-\ln (1-p)=p+O(p^2)$.
+Thus
+$$
+\sqrt{rac{n^2p}{\ln (np)}} = \sqrt{rac{n^2 p}{\ln b\log_b (np)}}
+=(1+o(1)){n \over \sqrt{\log_b (np)}}.
+$$
+Also if~$p$ is constant, then $\log_b n=(1+o(1))\log_b(np)$.
+So altogether we obtain the following.
+egin{corollary}\label{thmdense1}
+For every  $\eps>0$ there exists a constant $C=C(\eps)$ such that if $C/n \le p \le 1-\eps$,
+then a.a.s.
+$${m ccl}(G_{n,p})=(1\pm \eps) rac{n}{\sqrt{\log_{b} (np)}}. $$
+\end{corollary}
+
+In the last section of the paper, we estimate~ccl$(G_{n,c/n})$ where $c>1$ is fixed.
+Krivelevich and Sudakov~\cite{KS} observed that there are constants~$c_1$ and~$c_2$
+such that $c_1\sqrt{n /\log n}\le {m ccl}(G_{n,c/n})\le c_2\sqrt{n}$
+and asked what the correct order of magnitude is.
+ 
+
+
+
+--- Model Generation for result #6 ---
+\label{thmsparse}
+For every $c>1$ there exists a constant $C=C(c)$ such that if $p=c/n$, and $n$ is sufficiently large, then a.a.s.
+$${
+    ccl}(G_{n,p})= (1+o(1))  \sqrt{n \over \log n}.$$

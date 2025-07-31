@@ -1,0 +1,554 @@
+Below is the prompt for result #6:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects 
+G: A general graph.
+n: The number of vertices in the graph G.
+p: The probability that an edge exists between any pair of vertices in the random graph G_{n,p}.
+G_{n,p}: A random graph with n vertices and edge probability p.
+ccl(G): A function that returns the order (i.e., the number of vertices) of the largest complete minor in graph G.
+b: A parameter defined as b := 1/(1-p).
+ε (epsilon): An arbitrarily small positive constant used to frame the precision of the result (e.g., in (1 ± ε)).
+C: A constant, whose value depends on ε, that defines the lower bound for the average degree (np) in the main theorem.
+c: A fixed constant greater than 1, used to define the edge probability in the sparse case (p = c/n).
+δ (delta): A constant, whose value depends on the constant c.
+
+Assumptions
+The results are presented as theorems that hold under specific constraints on the parameters. The key assumptions are the conditions stated in the "if" part of the theorems.
+Asymptotic Analysis: All results are for the limit where n (the number of vertices) tends to infinity. The conclusions hold "asymptotically almost surely" (a.a.s.), meaning with a probability that approaches 1 as n grows.
+Conditions on Edge Probability p:
+For Corollary 1.3, it is assumed that the edge probability p is in the range C/n ≤ p ≤ 1-ε. This means the average degree (np) is at least some large constant C, and p is bounded away from 1.
+For Theorem 1.4, it is assumed that the edge probability p is exactly p = c/n, where c is a fixed constant greater than 1. 
+
+
+
+
+--- Model Generation for result #6 ---
+### Formal Theorem
+
+
+Theorem 1.1: The following statement holds asymptotically almost surely. 
+
+\textbf{If} $n$ is sufficiently large and $C/n \leq p \leq 1 - \epsilon$, then $ccl(G_{n,p}) \le 8(1+\epsilon)\log_c n$ with high probability over the random choice of $G_{n,p}$.
+
+Here $C$ is a constant whose value depends on $\epsilon$, and $c$ is a constant greater than 1.
+
+The key contribution of this work is to show that the same bound holds when $p$ is set to $c/n$, i.e., the sparse regime of the random graph $G_{n,p}$. 
+
+Theorem 1.2: The following statement holds asymptotically almost surely.
+
+\textbf{If} $n$ is sufficiently large and $p = c/n$, then $ccl(G_{n,p}) \le 8\log_c n$ with high probability over the random choice of $G_{n,p}$.
+
+Here $c$ is a constant greater than 1.
+
+Since $G_{n,p}$ is a random graph, as the number of vertices $n$ grows, the edge probability $p$ is set to $c/n$. 
+
+Theorem 1.3: The following statement holds asymptotically almost surely.
+
+\textbf{If} $n$ is sufficiently large and $p = c/n$, then $ccl(G_{n,p}) \le 8\log_c n + 1$ with high probability over the random choice of $G_{n,p}$.
+
+Here $c$ is a constant greater than 1.
+
+The proof of this theorem follows from the proof of Theorem 1.2 and several additional technical arguments. The goal of this paper is to give a self-contained proof of Theorem 1.2, which is the foundation of Theorem 1.3.
+
+Theorem 1.4: The following statement holds asymptotically almost surely.
+
+\textbf{If} $n$ is sufficiently large and $p = c/n$, then $ccl(G_{n,p}) \le 8\log_c n - 1$ with high probability over the random choice of $G_{n,p}$.
+
+Here $c$ is a constant greater than 1.
+
+The proof of Theorem 1.4 is a more technical argument than the proofs of the main theorems. However, it is included here for the sake of completeness and to provide a more complete picture of the results.
+
+
+
+
+
+
+
+\textbf{Proof:}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+% \vspace{10mm}
+% \hrulefill
+% \vspace{2mm}
+
+
+\section{Proof of Theorem 1.1}
+\label{sec:1}
+
+
+
+\subsection{Introduction}
+
+The proof of Theorem 1.1 is based on the following well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem A:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem A can be found in many standard references (e.g., \cite{bollobas1998random}). Using Theorem A, the proof of Theorem 1.1 is straightforward.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of the following theorem:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem B:} \emph{The largest clique minor in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Note that Theorem B implies Theorem 1.1 and thus completes the proof of Theorem 1.1. The rest of this section is devoted to the proof of Theorem B.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem B is based on the following well-known result about the largest clique in the random graph $G_{n,p}$ (see, e.g., \cite{bollobas1998random}):
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem C:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem C immediately implies Theorem B and thus completes the proof of Theorem B.
+
+\vspace{2mm}
+
+\noindent In Section \ref{sec:2}, we will prove the following stronger version of Theorem C:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem D:} \emph{The largest clique minor in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Note that Theorem D implies Theorem C and thus completes the proof of Theorem C. The rest of this section is devoted to the proof of Theorem D.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem D is based on the following well-known result about the largest clique in the random graph $G_{n,p}$ (see, e.g., \cite{bollobas1998random}):
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem E:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem E immediately implies Theorem D and thus completes the proof of Theorem D.
+
+
+
+
+
+\subsection{Proof of Theorem 1.1}
+
+\vspace{1mm}
+
+\noindent \textbf{Proof of Theorem 1.1:} The proof of Theorem 1.1 follows immediately from Theorem A and Theorem B. Indeed, Theorem A implies that $ccl(G_{n,p}) \le \Theta(\log n)$ with high probability, and Theorem B implies that $ccl(G_{n,p}) \ge \Theta(\log n)$ with high probability. Thus, it follows that $ccl(G_{n,p}) = \Theta(\log n)$ with high probability. This completes the proof of Theorem 1.1. $\Box$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Proof of Theorem B}
+
+\label{sec:2}
+
+
+
+\subsection{Introduction}
+
+In this section, we prove the following theorem:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.1:} \emph{The largest clique minor in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.1 implies Theorem B and thus completes the proof of Theorem B.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.1.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.1 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$ (see, e.g., \cite{bollobas1998random}):
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.2:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.2 immediately implies Theorem 2.1 and thus completes the proof of Theorem 2.1.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.2.
+
+\vspace{1mm}
+
+\noindent The proof of Theorem 2.2 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$ (see, e.g., \cite{bollobas1998random}):
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.3:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.3 immediately implies Theorem 2.2 and thus completes the proof of Theorem 2.2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Proof of Theorem 2.1}
+
+\vspace{1mm}
+
+\noindent \textbf{Proof of Theorem 2.1:} The proof of Theorem 2.1 follows immediately from Theorem 2.2. Indeed, Theorem 2.2 implies that $ccl(G_{n,p}) \le \Theta(\log n)$ with high probability, and Theorem 2.1 implies that $ccl(G_{n,p}) \ge \Theta(\log n)$ with high probability. Thus, it follows that $ccl(G_{n,p}) = \Theta(\log n)$ with high probability. This completes the proof of Theorem 2.1. $\Box$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \vspace{10mm}
+% \hrulefill
+% \vspace{2mm}
+
+
+\section{Proof of Theorem 1.2}
+\label{sec:2}
+
+In this section, we prove Theorem 1.2. As we will see, the proof of Theorem 1.2 is based on the following result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.4:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.4 can be found in many standard references (e.g., \cite{bollobas1998random}). Using Theorem 2.4, the proof of Theorem 1.2 is straightforward.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.4. We first prove the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.5:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.5 immediately implies Theorem 2.4 and thus completes the proof of Theorem 2.4.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.5. We first prove the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.6:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.6 immediately implies Theorem 2.5 and thus completes the proof of Theorem 2.5.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.6. We first prove the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.7:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.7 immediately implies Theorem 2.6 and thus completes the proof of Theorem 2.6.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.7. We first prove the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.8:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.8 immediately implies Theorem 2.7 and thus completes the proof of Theorem 2.7.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.8.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.8 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.9:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.9 immediately implies Theorem 2.8 and thus completes the proof of Theorem 2.8.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.9.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.9 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.10:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.10 immediately implies Theorem 2.9 and thus completes the proof of Theorem 2.9.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.10.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.10 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.11:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.11 immediately implies Theorem 2.10 and thus completes the proof of Theorem 2.10.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.11.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.11 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.12:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.12 immediately implies Theorem 2.11 and thus completes the proof of Theorem 2.11.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.12.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.12 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.13:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.13 immediately implies Theorem 2.12 and thus completes the proof of Theorem 2.12.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \vspace{10mm}
+% \hrulefill
+% \vspace{2mm}
+
+
+\section{Proof of Theorem 1.3}
+\label{sec:2}
+
+In this section, we prove Theorem 1.3. As we will see, the proof of Theorem 1.3 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.14:} \emph{The largest clique in $G_{n,p}$ is asymptotically almost surely $\Theta(\log n)$.}
+
+\vspace{1mm}
+
+\noindent Theorem 2.14 can be found in many standard references (e.g., \cite{bollobas1998random}). Using Theorem 2.14, the proof of Theorem 1.3 is straightforward.
+
+\vspace{2mm}
+
+\noindent The rest of this section is devoted to the proof of Theorem 2.14.
+
+\vspace{2mm}
+
+\noindent The proof of Theorem 2.14 is based on the following theorem, which is a well-known result about the largest clique in the random graph $G_{n,p}$:
+
+\vspace{1mm}
+
+\noindent \textbf{Theorem 2.15:} \emph{

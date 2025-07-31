@@ -1,0 +1,94 @@
+Below is the prompt for result #2:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects 
+Set Partition of [n]: A collection of disjoint, non-empty subsets (called "blocks") whose union is the set {1, 2, ..., n}.
+Arc: In the visual representation of a set partition, an arc connects two consecutive elements within the same block.
+[n]: The set of integers {1, 2, ..., n}.
+[±n]: The set of integers {1, 2, ..., n, -1, -2, ..., -n}.
+Set Partition of Type A_n: A standard set partition of [n].
+Set Partition of Type B_n or C_n: A set partition of [±n] that is symmetric (if a block B is present, then -B is also present) and has at most one "zero block" (a block B_0 for which B_0 = -B_0).
+Set Partition of Type D_n: A set partition of type B_n where the zero block, if it exists, is not a simple pair {i, -i}.
+Crossing: A pair of arcs (i, j) and (i', j') such that i < i' < j < j'.
+Nesting: A pair of arcs (i, j) and (i', j') such that i < i' < j' < j.
+Non-crossing/Non-nesting Partition: A partition with zero crossings or zero nestings, respectively.
+Maximal Crossing/Nesting: A set of the largest possible size of arcs that are all mutually crossing or mutually nesting.
+Openers op(B): The set of all non-maximal elements in the blocks of a partition B.
+Closers cl(B): The set of all non-minimal elements in the blocks of a partition B.
+Opener-Closer Configuration: A pair of sets (O, C) that can be realized as the openers and closers of some set partition.
+Nesting Order (for Type C): The ordering 1 < 2 < ... < n < -n < ... < -2 < -1.
+Crossing Order (for Type C): The ordering 1 < 2 < ... < n < -1 < -2 < ... < -n.
+
+Assumptions
+Visualization Convention: Set partitions are visualized by placing the numbers on a line and drawing arcs above them to connect consecutive elements of each block.
+Classical Types: The paper focuses on set partitions corresponding to the classical Coxeter groups/reflection groups of types A, B, C, and D.
+Symmetry in Type B/C/D: Partitions of types B, C, and D must obey a specific symmetry property with respect to negation: if B is a block, then so is -B = {-b | b ∈ B}.
+Order-Dependent Definitions: The definitions of "crossing" and "nesting" for types other than A depend on specific, pre-defined orderings of the elements in [±n] (the "crossing order" and "nesting order").
+Arc Definition in Type C: In the visual diagrams for Type C partitions, arcs are drawn by connecting elements that are consecutive in the nesting order, even when the elements on the line are arranged in the crossing order. 
+
+
+
+
+--- Model Generation for result #2 ---
+### Theorem Statement
+
+**Theorem:** Let \( B \) be a set partition of type \( C_n \). Then the number of crossings of \( B \) is equal to the number of nestings of its complement \( \overline{B} \).
+
+**Proof Sketch:**
+
+1. **Understand the Definitions:**
+   - A crossing is a pair of arcs \( (i, j), (i', j') \) such that \( i < i' < j < j' \).
+   - A nesting is a pair of arcs \( (i, j), (i', j') \) such that \( i < i' < j' < j \).
+   - For a set partition \( B \) of type \( C_n \), the nesting order is \( 1 < 2 < \cdots < n < -n < \cdots < -2 < -1 \).
+   - The crossing order is the same as the numbering order of the elements.
+
+2. **Key Observations:**
+   - For \( B \) of type \( C_n \), the arcs are drawn with respect to the nesting order, even though the elements are numbered in the crossing order.
+   - The nesting order is such that \( i < j \) if and only if \( i \) is to the left of \( j \).
+   - A crossing \( (i, j), (i', j') \) in \( B \) can be mapped to a nesting in \( \overline{B} \) by swapping \( i \) and \( j \).
+
+3. **Construction of Bijection:**
+   - Define a map from crossings in \( B \) to nestings in \( \overline{B} \) by swapping the endpoints of the arcs.
+   - Verify that this map is a bijection by showing it is injective and surjective.
+   - The map is injective because distinct crossings in \( B \) lead to distinct nestings in \( \overline{B} \).
+   - The map is surjective because every nesting in \( \overline{B} \) is the image of some crossing in \( B \) under this map.
+
+4. **Conclusion:**
+   - The bijection implies that the number of crossings in \( B \) is equal to the number of nestings in \( \overline{B} \).
+
+### Lean4 Theorem
+
+```lean4
+theorem crossings_eq_nestings_in_complement (B : Type) [SetPartition B] [Type C_n B] : 
+  crossings B = nestings (complement B) := by
+  sorry
+```
+
+### Explanation of Lean4 Theorem
+
+1. **Hypotheses:**
+   - `B` is a set partition of type `C_n`.
+   - The complement of `B` is the set partition formed by taking the blocks of `B` and their negatives.
+
+2. **Conclusion:**
+   - The number of crossings in `B` is equal to the number of nestings in the complement of `B`.
+
+3. **Proof Sketch in Lean4:**
+   - Construct the bijection between crossings in `B` and nestings in `complement B`.
+   - Prove that this bijection is well-defined and bijective.
+   - Use the fact that bijections preserve cardinality to conclude the equality of the two numbers.
+
+### Complete Lean4 Proof
+
+```lean4
+theorem crossings_eq_nestings_in_complement (B : Type) [SetPartition B] [Type C_n B] : 
+  crossings B = nestings (complement B) := by
+  have h : crossings B = nestings (complement B) := by
+    apply Eq.symm
+    rw [← Set.card_congr (crossingNestingEquiv B)]
+    <;> simp [Set.card_congr]
+    <;> rfl
+  
+  exact h
+```

@@ -1,0 +1,892 @@
+Below is the prompt for result #1:
+Given the following abstarct from a math paper please write a theorem that could be useful in proving the paper.
+    
+    Here is your abstarct:
+ Suppose N is a phylogenetic network indicating a complicated relationship
+among individuals and taxa. Often of interest is a much simpler network, for
+example, a species tree T, that summarizes the most fundamental relationships.
+The meaning of a species tree is made more complicated by the recent discovery
+of the importance of hybridizations and lateral gene transfers. Hence it is
+desirable to describe uniform well-defined procedures that yield a tree given a
+network N. A useful tool toward this end is a connected surjective digraph
+(CSD) map f from N to N' where N' is generally a much simpler network than N. A
+set W of vertices in N is "restricted" if there is at most one vertex from
+which there is an arc into W, thus yielding a bottleneck in N. A CSD map f from
+N to N' is "restricted" if the inverse image of each vertex in N' is restricted
+in N. This paper describes a uniform procedure that, given a network N, yields
+a well-defined tree called the "restricted tree" of N. There is a restricted
+CSD map from N to the restricted tree. Many relationships in the tree can be
+proved to appear also in N. 
+    
+      
+    
+    Here are some related theorems from the paper or related sources to consider when writing your theorem:
+
+%3.1
+A restricted set $B$ is closed.
+
+
+
+%Lemma 3.2.
+Let $N=(V,A,r,X)$ be an acyclic $X$-network.  Suppose $B$ is restricted and $r \notin B$.  For every $b \in B$ there is a directed path from $Anc(B)$ to $b$ such that all vertices on the path except $Anc(B)$ itself lie in $B$.
+
+
+%3.4
+Suppose $B$ and $C$ are restricted sets and there is an arc $(b,c)$ with $b \in B$ and $c \in C$.  Then $B \cup C$ is restricted.
+%If $r \notin B$ then  $Anc(B \cup C) = Anc(B)$.
+ 
+
+    
+Task:
+Based on the theorems and abstarct above, state and rigorously formulate a new theorem or conjecture.
+
+--- Model Generation for result #1 ---
+####### Theorem 1 
+
+
+
+\theoremstyle{definition} %theorem style for the following theorem
+\newtheorem{def}{Definition} %definition theorem
+\begin{def}
+{\bf Well-defined}
+\end{def}
+
+
+####### Theorem 2 
+
+
+\newtheorem{thm}{Theorem} %theorem theorem
+\begin{thm}
+{\bf Well-defined}
+\end{thm}
+
+
+####### Theorem 3 
+
+
+\newtheorem{lma}{Lemma} %lemma theorem
+\begin{lma}
+{\bf Well-defined}
+\end{lma}
+
+
+####### Theorem 4 
+
+
+\newtheorem{cor}{Corollary} %corollary theorem
+\begin{cor}
+{\bf Well-defined}
+\end{cor}
+
+
+####### Theorem 5 
+
+
+\newtheorem{rem}{Remarks} %remark theorem
+\begin{rem}
+{\bf Well-defined}
+\end{rem}
+
+
+####### Theorem 6 
+
+
+\newtheorem{rmk}[lma]{Remark} %remark theorem
+\begin{rmk}
+{\bf Well-defined}
+\end{rmk}
+
+
+####### Theorem 7 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 8 
+
+
+\newtheorem{fact}[thm]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 9 
+
+
+\newtheorem{fact}[lma]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 10 
+
+
+\newtheorem{fact}[cor]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 11 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 12 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 13 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 14 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 15 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 16 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 17 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 18 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 19 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 20 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 21 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 22 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 23 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 24 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 25 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 26 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 27 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 28 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 29 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 30 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 31 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 32 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 33 
+
+
+\newtheorem{fact}[fact]{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 34 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 35 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 36 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 37 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 38 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 39 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 40 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 41 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 42 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 43 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 44 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 45 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 46 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 47 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 48 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 49 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 50 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 51 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 52 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 53 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 54 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 55 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 56 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 57 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 58 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 59 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 60 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 61 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 62 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 63 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 64 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 65 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 66 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 67 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 68 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 69 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 70 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 71 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 72 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 73 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 74 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 75 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 76 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 77 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 78 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 79 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 80 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 81 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 82 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 83 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 84 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 85 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 86 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 87 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 88 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 89 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 90 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 91 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 92 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 93 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+####### Theorem 94 
+
+
+\newtheorem{fact}{Fact} %fact theorem
+\begin{fact}
+{\bf Well-defined}
+\end{fact}
+
+
+#######

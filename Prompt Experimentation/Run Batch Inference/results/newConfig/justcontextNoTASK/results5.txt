@@ -1,0 +1,47 @@
+Below is the prompt for result #5:
+Given the following context from a math paper please write a theorem that follows.
+
+
+    Here is your context:
+ rtex-disjoint heterochromatic trees. In \cite{chen},
+the authors determined the heterochromatic tree partition number
+of an $r$-edge-colored complete bipartite graph $K_{m,n}$. In this
+paper we consider an $r$-edge-colored complete graph $K_{n}$ and give
+the exact expression for its heterochromatic tree partition number. \\
+
+Before proceeding, we introduce some definitions and notations.
+Throughout this paper, we use $r$ to denote the number of the
+colors, and an $r$-edge-coloring of a graph $G$ means that each
+color appears at least once in $G$. Let $\phi$ be an
+$r$-edge-coloring of a graph $G$. For an edge $e\in E(G)$, denote
+by $\phi(e)$ the color of $e$. Denote by $t_r(G, \phi)$ the
+minimum positive integer $p$ such that under the $r$-edge-coloring
+$\phi$, the vertices of $G$ can be covered by at most $p$
+vertex-disjoint heterochromatic trees. Clearly, $t_r(G)=\max
+_{\phi} t_r(G, \phi)$, where $\phi$ runs over all
+$r$-edge-colorings of the graph $G$. Let $\phi$ be an
+$r$-edge-coloring of the graph $G$ and $F$ be a spanning forest of
+$G$, each component of which is a heterochromatic tree. If $F$
+contains exactly $t_r(G, \phi)$ components, then $F$ is called an
+{\it optimal heterochromatic tree partition} of the graph $G$ with
+edge-coloring $\phi$. Note that a tree consisting of a single
+vertex is also regarded as a heterochromatic tree. \\
+
+For any integer $r\geq 2$, there is a unique positive integer $t$,
+such that ${t\choose 2} +2\leq r\leq {{t+1}\choose 2} +1$.
+Clearly, the integer $t$ is determined completely by $r$, and here
+we denote it by $f(r)=t$. This integer $f(r)=t$ will play an
+important role in expressing the number $t_r(K_n)$. If the color
+number $r=1$, clearly a maximum matching (plus a single vertex
+when $n$ is odd) in $K_n$ is an optimal heterochromatic tree
+partition, and then $t_r(K_n)=\lceil \frac{n}{2} \rceil$. So, in
+the rest of this paper we only consider the case $2\leq r\leq
+{n\choose 2}$. The following is the main result of this paper.   
+
+--- Model Generation for result #5 ---
+\label{thm1}
+Let $r$ be an integer with $2\leq r\leq {n\choose 2}$. Then
+$$t_r(K_n)=\left\{\begin{array}{ll}
+f(r)+1, & \mbox{if } r\geq \frac{{n\choose 2}}{2}+1\\
+\lceil \frac{r}{{f(r)+1}}\rceil, & \mbox{otherwise}\\
+\end{array}\right.$$

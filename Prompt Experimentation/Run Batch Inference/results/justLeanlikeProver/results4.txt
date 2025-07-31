@@ -1,0 +1,100 @@
+Below is the prompt for result #4:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+ Mathematical Objects 
+n: A large integer representing the dimension of the matrices.
+M_n: An n x n complex matrix whose entries are independent discrete random variables. This is the main object of study.
+Singular Matrix: A square matrix whose determinant is zero. The probability of this event is the central quantity to be bounded.
+p: A constant between 0 and 1, representing an upper bound on the probability that a random variable takes any single value.
+r: A constant positive integer, used as an exponent in the main property definition.
+p-bounded of exponent r: A key technical property defined for the distribution of the random entries of the matrix M_n. A random variable ξ is p-bounded of exponent r if there is no value z_0 such that P(ξ = z_0) > p, and for any r distinct values z_1, ..., z_r, the probability P(ξ ∈ {z_1, ..., z_r}) is bounded away from 1 by a constant.
+Integral Domain of Characteristic Zero: An algebraic structure (like the integers or complex numbers) where the main results hold.
+
+Assumptions
+Large n: The results are asymptotic, holding as n (the matrix dimension) tends to infinity.
+Independent Entries: The entries of the random matrix M_n are assumed to be mutually independent random variables. They are not required to be identically distributed.
+Discrete Distribution: The random entries of M_n take values from a discrete set of complex numbers.
+p-bounded Property: The main theorem assumes that the distributions of the matrix entries satisfy the p-bounded of exponent r property for some constants p and r. This property ensures that the random variables are "not too concentrated" on any single value or on any small set of values.
+
+
+
+
+--- Model Generation for result #4 ---
+### Theorem for the Mathematical Paper
+
+**Theorem Statement**:  
+Let \( M_n \) be an \( n \times n \) complex matrix whose entries are independent discrete random variables with values in a countable set \( \Omega \). Suppose that for each entry \( M_{i,j} \) of \( M_n \), the probability \( P(M_{i,j} = z) \) is \( p \)-bounded of exponent \( r \) for some constants \( p \) and \( r \), where \( 0 < p < 1 \) and \( r \geq 1 \). Then, the probability that \( M_n \) is singular (i.e., its determinant is zero) is bounded above by a constant depending only on \( p \), \( r \), and \( \Omega \), and is independent of \( n \).
+
+### Explanation
+
+1. **Key Components**:
+   - \( M_n \) is an \( n \times n \) matrix whose entries are independent discrete random variables.
+   - Each entry \( M_{i,j} \) has a discrete probability distribution with the \( p \)-bounded of exponent \( r \) property.
+   - The goal is to bound the probability that \( M_n \) is singular.
+
+2. **Intuition**:
+   - The \( p \)-bounded property ensures that no single entry can take a value with probability significantly greater than \( p \), and the probability of any small set of values is not concentrated. This prevents any single entry from dominating the determinant's behavior.
+   - The independence of entries allows us to use the union bound or other probabilistic methods to bound the probability of the matrix being singular.
+
+3. **Proof Sketch**:
+   - The determinant of \( M_n \) is a sum of products of entries. The independence and \( p \)-boundedness prevent any single term from dominating the sum.
+   - The probability that the determinant is zero is bounded by the probability that any minor (submatrix) has a zero determinant, which is bounded by the probability that any submatrix has a zero entry.
+   - The submatrix entries are independent and \( p \)-bounded, so the probability of any submatrix being singular is small.
+
+4. **Formalization**:
+   - The formalized theorem uses the \( p \)-bounded property to bound the probability of each entry taking a specific value, and then uses independence to bound the probability that the determinant is zero.
+
+5. **Generalization**:
+   - The theorem applies to matrices where the entries are discrete random variables with the \( p \)-bounded property, and the entries need not be identically distributed.
+
+### Additional Notes
+
+- The \( p \)-bounded property is a form of "bounded irregularity" in the distribution of the random variables.
+- The independence of entries is critical for bounding the probability of the matrix being singular.
+- The theorem generalizes existing results in random matrix theory where the entries are identically distributed with bounded support.
+
+### Abstract Plan
+
+1. **Define the \( p \)-bounded property for the entries**:
+   - For each entry \( M_{i,j} \), no single value \( z \) has probability \( > p \), and the probability of any \( r \) distinct values is not too large.
+
+2. **Express the probability of the matrix being singular**:
+   - The determinant is zero iff the matrix has a zero minor.
+   - Bound the probability that any minor has a zero determinant using the \( p \)-bounded property.
+
+3. **Use independence to combine the bounds**:
+   - For independent entries, the probability of the matrix being singular is the sum of probabilities over all minors.
+   - Each term is bounded, so the sum is bounded.
+
+4. **Conclude the result**:
+   - The probability is bounded by a constant independent of \( n \).
+
+### Lean4 Theorem Formalization
+
+```lean4
+theorem singular_probability_bound (n : ℕ) (p : ℝ) (r : ℕ) (Ω : Type) [fintype Ω] 
+  (M : Matrix (Fin n) (Fin n) Ω) 
+  (h_indep : ∀ i j, i ≠ j → Independent M i j) 
+  (h_p_bounded : ∀ i j, p_bounded (M i j) p r) : 
+  P (det M = 0) ≤ constant :=
+```
+
+### Notes on Lean4 Formalization
+
+- `p_bounded` is a hypothetical predicate representing the \( p \)-bounded property.
+- `Independent M i j` is a hypothetical predicate representing the independence of entries \( M_{i,j} \) and \( M_{k,l} \) when \( (i,j) \neq (k,l) \).
+- `P (det M = 0)` is the probability that the determinant is zero.
+- The theorem assumes independence and \( p \)-boundedness for all entries, and concludes a bound on the probability of singularity.
+
+### Final Answer
+
+The theorem formalizes the mathematical result that for an \( n \times n \) matrix with independent discrete entries satisfying a \( p \)-bounded property, the probability that the matrix is singular is bounded above by a constant independent of \( n \). The proof leverages independence and the irregularity of the entries to control the probability of the determinant being zero.
+
+```lean4
+theorem singular_probability_bound (n : ℕ) (p : ℝ) (r : ℕ) (Ω : Type) [fintype Ω] 
+  (M : Matrix (Fin n) (Fin n) Ω) 
+  (h_indep : ∀ i j, i ≠ j → Independent M i j) 
+  (h_p_bounded : ∀ i j, p_bounded (M i j) p r) : 
+  P (det M = 0) ≤ constant :=
+```

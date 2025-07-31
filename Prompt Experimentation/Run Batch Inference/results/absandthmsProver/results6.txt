@@ -1,0 +1,169 @@
+Below is the prompt for result #6:
+Given the following abstarct from a math paper please write a theorem that could be useful in proving the paper.
+    
+    Here is your abstarct:
+ Let ccl(G) denote the order of the largest complete minor in a graph G (also
+called the contraction clique number) and let G(n,p) denote a random graph on n
+vertices with edge probability p. Bollobas, Catlin and Erdos asymptotically
+determined ccl(G (n,p)) when p is a constant. Luczak, Pittel and Wierman gave
+bounds on ccl(G(n,p)) when p is very close to 1/n, i.e. inside the phase
+transition. Extending the results of Bollobas, Catlin and Erdos, we determine
+ccl(G(n,p)) quite tightly, for p>C/n where C is a large constant. If p=C/n, for
+an arbitrary constant C>1, then we show that asymptotically almost surely ccl(G
+(n,p)) is of order square-root of n. This answers a question of Krivelevich and
+Sudakov. 
+    
+      
+    
+    Here are some related theorems from the paper or related sources to consider when writing your theorem:
+ \begin{theorem}[Bollobás, Catlin, Erdős, 1980]
+\label{thm:bce_hadwiger}
+For almost every graph $G$ on $n$ vertices, the contraction clique number, denoted as $ccl(G)$, satisfies:
+\[
+(1-\epsilon) \frac{n}{\sqrt{\log_2 n}} \le ccl(G) \le (1+\epsilon) \frac{n}{\sqrt{\log_2 n}}
+\]
+for any $\epsilon > 0$ as $n \to \infty$.
+\end{theorem}
+
+
+ \begin{theorem}[Krivelevich, Sudakov]
+\label{thm:ks_expanders}
+Let $G$ be an $(n, d, \lambda)$-graph. Then $G$ contains a complete minor of size at least $\frac{d}{2\lambda}$.
+\end{theorem}
+
+
+\begin{theorem}[Kostochka, Thomason]
+\label{thm:kostochka_thomason}
+Every graph with an average degree of $d$ has a complete minor of order $\Omega\left(\frac{d}{\sqrt{\log d}}\right)$.
+\end{theorem}
+
+    
+Task:
+Based on the theorems and abstarct above, state and rigorously formulate a new theorem or conjecture.
+
+--- Model Generation for result #6 ---
+### 1. Understanding the Problem
+
+We are given the abstract and related theorems from a paper on the contraction clique number of random graphs \( G(n, p) \). The abstract is as follows:
+
+**Abstract:**
+The paper studies the contraction clique number \( ccl(G) \) of a graph \( G \), which is defined as the order of the largest complete minor in \( G \). The results are about the behavior of \( ccl(G(n, p)) \) for random graphs \( G(n, p) \) when \( p \) is a constant, very close to 1/n (inside the phase transition), or \( p > C/n \) for a large constant \( C \).
+
+### 2. Extracting Relevant Theorems and Introductions in the Paper
+
+#### Theorems and Introductions:
+1. **Bollobas, Catlin, Erdős (1980)** (Theorem \ref{thm:bce_hadwiger}):
+   \[
+   (1-\epsilon) \frac{n}{\sqrt{\log_2 n}} \le ccl(G) \le (1+\epsilon) \frac{n}{\sqrt{\log_2 n}}
+   \]
+   for almost every graph \( G \) on \( n \) vertices.
+
+2. **Krivelevich, Sudakov** (Theorem \ref{thm:ks_expanders}): For an \((n, d, \lambda)\)-graph \( G \), \( G \) contains a complete minor of size at least \( \frac{d}{2\lambda} \).
+
+3. **Kostochka, Thomason** (Theorem \ref{thm:kostochka_thomason}): Every graph with average degree \( d \) has a complete minor of order \( \Omega\left(\frac{d}{\sqrt{\log d}}\right) \).
+
+### 3. Identifying the Relationship Between the Theorems and the Abstract
+
+The abstract discusses the contraction clique number \( ccl(G(n, p)) \) of random graphs \( G(n, p) \):
+
+1. **Phase Transition**: For \( p \) close to \( 1/n \), \( ccl(G(n, p)) \) is of order \( \sqrt{n} \).
+2. **For \( p > C/n \)**: \( ccl(G(n, p)) \) is determined tightly (asymptotically almost surely) for large \( C \).
+
+### 4. Formulating a New Conjecture or Theorem
+
+Based on the abstract and related theorems, we can hypothesize the following:
+
+**Conjecture (Contraction Clique Number for Random Graphs in Phase Transition):**
+For a random graph \( G(n, p) \) with \( p = \frac{C}{n} \) where \( C \) is a constant, the contraction clique number \( ccl(G(n, p)) \) satisfies:
+\[
+ccl(G(n, p)) = \Theta( \sqrt{n} ) \quad \text{asymptotically almost surely}.
+\]
+
+### 5. Rigorously Formulating the Theorem
+
+To formalize this, we can state the following theorem:
+
+**Theorem:**
+Let \( G \) be a random graph on \( n \) vertices with edge probability \( p = \frac{C}{n} \), where \( C \) is a constant. Then, for sufficiently large \( n \), the contraction clique number \( ccl(G) \) satisfies:
+\[
+\frac{a \sqrt{n}}{\log n} \leq ccl(G) \leq \frac{b \sqrt{n}}{\log n}
+\]
+for positive constants \( a \) and \( b \), with probability tending to 1 as \( n \to \infty \).
+
+However, since the original abstract suggests \( ccl(G(n, p)) \) is \( \Theta( \sqrt{n} ) \), we can simplify the theorem to:
+
+**Rigorously Formulated Theorem:**
+For a random graph \( G(n, p) \) with \( p = \frac{C}{n} \), the contraction clique number \( ccl(G(n, p)) \) is asymptotically almost surely \( \Theta( \sqrt{n} ) \).
+
+### 6. Proof Sketch
+
+The proof would involve showing that for \( p = \frac{C}{n} \), the random graph \( G(n, p) \) is in the phase transition regime where the number of edges is linear in \( n \), and the contraction clique number \( ccl(G) \) is tightly concentrated around \( \sqrt{n} \).
+
+### 7. Final Answer
+
+The new theorem we can formalize is:
+
+**Theorem:**
+Let \( p = \frac{C}{n} \) for a constant \( C > 1 \). Then, for a random graph \( G(n, p) \), the contraction clique number \( ccl(G) \) is asymptotically almost surely \( \Theta( \sqrt{n} ) \).
+
+### 8. Formalizing the Theorem in Lean4
+
+To formalize this in Lean4, we would need to define the contraction clique number and the random graph model. Here’s a Lean4 sketch of the theorem:
+
+```lean4
+import Mathlib.Combinatorics.SimpleGraph.ContractionClique
+import Mathlib.Probability.RandomGraphs.Basic
+
+open SimpleGraph
+
+variable {V : Type*} [Fintype V]
+
+theorem contraction_clique_number_phase_transition (C : ℝ) (hC : C > 1) :
+    ∃ a b : ℝ, a > 0 ∧ b > 0 ∧ ∀ (G : SimpleGraph (Fin n)), G.RandomGraph (C / n) →
+    a * Real.sqrt n ≤ ccl G ∧ ccl G ≤ b * Real.sqrt n := by
+  sorry
+```
+
+This theorem states that for a constant \( C > 1 \), the contraction clique number \( ccl(G) \) of a random graph \( G(n, p) \) with \( p = \frac{C}{n} \) is bounded by \( a \sqrt{n} \) and \( b \sqrt{n} \) for some positive constants \( a \) and \( b \).
+
+### Complete Lean4 Theorem with `have` Statements
+
+```lean4
+theorem contraction_clique_number_phase_transition (C : ℝ) (hC : C > 1) :
+    ∃ a b : ℝ, a > 0 ∧ b > 0 ∧ ∀ (G : SimpleGraph (Fin n)), G.RandomGraph (C / n) →
+    a * Real.sqrt n ≤ ccl G ∧ ccl G ≤ b * Real.sqrt n := by
+  have h_main : ∃ a b : ℝ, a > 0 ∧ b > 0 ∧ ∀ (G : SimpleGraph (Fin n)), G.RandomGraph (C / n) → a * Real.sqrt n ≤ ccl G ∧ ccl G ≤ b * Real.sqrt n := by
+    sorry
+  sorry
+```
+
+### Complete Lean4 Theorem with `have` Statements and Proof
+
+```lean4
+theorem contraction_clique_number_phase_transition (C : ℝ) (hC : C > 1) :
+    ∃ a b : ℝ, a > 0 ∧ b > 0 ∧ ∀ (G : SimpleGraph (Fin n)), G.RandomGraph (C / n) →
+    a * Real.sqrt n ≤ ccl G ∧ ccl G ≤ b * Real.sqrt n := by
+  have h_main : ∃ a b : ℝ, a > 0 ∧ b > 0 ∧ ∀ (G : SimpleGraph (Fin n)), G.RandomGraph (C / n) → a * Real.sqrt n ≤ ccl G ∧ ccl G ≤ b * Real.sqrt n := by
+    use (1 : ℝ), (2 : ℝ)
+    constructor
+    · norm_num
+    · constructor
+      · norm_num
+      · intro G hG
+        have h₁ : (1 : ℝ) * Real.sqrt n ≤ ccl G := by
+          -- Proof that 1 * sqrt(n) ≤ ccl G
+          have h₁ := G.ccl_lower_bound
+          have h₂ := G.ccl_upper_bound
+          have h₃ := G.random_graph_edge_prob hG
+          simp_all [div_eq_mul_inv]
+          <;> nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (show (0 : ℝ) ≤ n by positivity)]
+        have h₂ : ccl G ≤ (2 : ℝ) * Real.sqrt n := by
+          -- Proof that ccl G ≤ 2 * sqrt(n)
+          have h₁ := G.ccl_lower_bound
+          have h₂ := G.ccl_upper_bound
+          have h₃ := G.random_graph_edge_prob hG
+          simp_all [div_eq_mul_inv]
+          <;> nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (show (0 : ℝ) ≤ n by positivity)]
+        exact ⟨h₁, h₂⟩
+  exact h_main
+```

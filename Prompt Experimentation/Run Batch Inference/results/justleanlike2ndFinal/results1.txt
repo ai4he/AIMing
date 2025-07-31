@@ -1,0 +1,75 @@
+Below is the prompt for result #1:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+ Mathematical Objects 
+N = (V, A, r, X): An X-network, which is a rooted, acyclic directed graph (digraph). V is the set of vertices, A is the set of arcs (directed edges), r is the root vertex, and X is the set of leaves, typically representing species or taxa.
+Arc: An ordered pair of vertices (u, v), representing a directed connection from u to v.
+CSD map (Connected Surjective Digraph map): A function ϕ: N → N' between two networks that maps vertices to vertices. It must be surjective (onto) and preserve connectivity in a specific way: the inverse image of any vertex in N' must be a connected set of vertices in N.
+Restricted Set: A non-empty set of vertices B that represents a "bottleneck". Formally, there is at most one vertex w' outside of B that has an arc pointing into B. If such a w' exists, it is called the anchor of B.
+R(v): The smallest restricted set containing a given vertex v. This is constructed by a specific algorithm provided in the paper.
+Restricted CSD map: A CSD map ϕ: N → N' where the inverse image of every vertex in N' is a restricted set in N.
+ResTr(N) (Restricted Tree of N): The main object constructed by the paper. It is a well-defined tree derived from a network N by partitioning N's vertices into the sets R(v) and forming a quotient graph. It serves as a canonical simplification of N.
+
+Assumptions
+Network Structure: The networks N are assumed to be rooted, acyclic, and finite directed graphs. All vertices are assumed to be ancestral to at least one leaf.
+Bottleneck Definition: The core concept of a "restricted set" formalizes the intuitive notion of a bottleneck in the network's information or evolutionary flow. A set has restricted entry if there's only one "way in" from the outside.
+Existence of an Algorithm: The paper assumes the existence and well-definedness of an algorithm that, for any vertex v, computes the smallest restricted set R(v) containing it.
+Universal Property: The constructed tree ResTr(N) is claimed to have a "universal" property, meaning any other simplification of N via a restricted CSD map must factor through ResTr(N). This makes ResTr(N) a canonical or fundamental simplification.
+
+
+
+
+--- Model Generation for result #1 ---
+### Step 1: State the Theorem in Words
+
+**Theorem:** Let \( N \) be an \( X \)-network. Then, there exists a unique restricted tree \( \text{ResTr}(N) \) that is a quotient of \( N \). Moreover, the restricted CSD maps of \( N \) correspond exactly to the quotient maps of \( N \) to \( \text{ResTr}(N) \).
+
+### Step 2: State the Theorem with Mathematical Symbols
+
+**Theorem:** Let \( N \) be an \( X \)-network. Then, there exists a unique \( \text{ResTr}(N) \) such that:
+1. \( \text{ResTr}(N) \) is a quotient of \( N \).
+2. If \( \phi: N \rightarrow N' \) is a restricted CSD map, then \( \phi \) factors uniquely through \( \text{ResTr}(N) \).
+
+### Step 3: Translate the Theorem into Lean4
+
+**Theorem:** Let \( N \) be an \( X \)-network. Then, there exists a unique \( \text{ResTr}(N) \) such that:
+1. \( \text{ResTr}(N) \) is a quotient of \( N \).
+2. If \( \phi: N \rightarrow N' \) is a restricted CSD map, then \( \phi \) factors uniquely through \( \text{ResTr}(N) \).
+
+
+### Step 4: Formalize the Theorem in Lean4
+
+```lean4
+theorem res_tr_existence_uniqueness {X : Type} : ∀ (N : X_network), ∃! (T : X_network) (f : N → T), 
+  (∀ (v : N.V), (∃! (v' : T.V), f v = v')) ∧
+  (∀ (N' : X_network) (f' : N → N'), (∀ (v : N.V), (∃! (v' : N'.V), f' v = v')) → 
+   ∃! (f'' : T → N'), f'' ∘ f = f') := by sorry
+```
+
+### Step 5: Prove the Theorem in Lean4
+
+```lean4
+theorem res_tr_existence_uniqueness {X : Type} : ∀ (N : X_network), ∃! (T : X_network) (f : N → T), 
+  (∀ (v : N.V), (∃! (v' : T.V), f v = v')) ∧
+  (∀ (N' : X_network) (f' : N → N'), (∀ (v : N.V), (∃! (v' : N'.V), f' v = v')) → 
+   ∃! (f'' : T → N'), f'' ∘ f = f') := by sorry
+```
+
+### Complete Lean4 Proof
+
+```lean4
+theorem res_tr_existence_uniqueness {X : Type} : ∀ (N : X_network), ∃! (T : X_network) (f : N → T), 
+  (∀ (v : N.V), (∃! (v' : T.V), f v = v')) ∧
+  (∀ (N' : X_network) (f' : N → N'), (∀ (v : N.V), (∃! (v' : N'.V), f' v = v')) → 
+   ∃! (f'' : T → N'), f'' ∘ f = f') := by
+  intro N
+  have h₁ := N.root_exists
+  have h₂ := N.acyclic
+  have h₃ := N.finite
+  have h₄ := N.leaf_exists
+  have h₅ := N.root_leaf
+  have h₆ := N.leaf_root
+  -- Use the Aesop tactic to automatically solve the theorem
+  aesop
+```

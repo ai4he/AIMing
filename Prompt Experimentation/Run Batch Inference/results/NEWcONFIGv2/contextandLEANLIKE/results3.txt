@@ -1,0 +1,71 @@
+Below is the prompt for result #3:
+Given the following objects, assumptions and context from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects
+G: A general graph.
+n: The number of vertices in the graph G.
+p: The probability that an edge exists between any two vertices in the random graph G_{n,p}. This probability can be a function of n.
+G_{n,p}: A random graph with n vertices and edge probability p.
+Δ (Delta): The maximum degree (the largest number of edges connected to a single vertex) of the graph G_{n,p}.
+V_1, ..., V_r: A collection of disjoint subsets of the vertices of G. In the context of strong colorability, this is a partition of all vertices.
+k: A positive integer, typically representing the required number of colors and the size of each set V_i in a partition.
+r: The number of disjoint sets (or "parts") in a partition of the vertices.
+Independent Transversal: An independent set (a set of vertices with no edges between them) that contains exactly one vertex from each of the sets V_1, ..., V_r.
+Strongly k-colorable: A property of a graph G. G is strongly k-colorable if for every partition of its vertices into r sets V_1, ..., V_r of size k, one can find a proper k-coloring where each color appears exactly once in each set V_i. (A small technical adjustment is made if k does not divide n).
+sχ(G) (Strong Chromatic Number): The central parameter of study. It is the minimum integer k for which the graph G is strongly k-colorable.
+θ (theta): An arbitrary small positive constant used to bound p away from 1.
+ε (epsilon): An arbitrary small positive constant used to describe asymptotic bounds (e.g., (1+o(1))Δ).
+
+
+Assumptions
+The results hold "almost surely" (a.s.), meaning the probability of the statement being true approaches 1 as the number of vertices n tends to infinity.
+General Condition: For Theorem 1.1, it is assumed that the edge probability p is bounded away from 1, i.e., p < 1-θ for some constant θ > 0.
+Conditions on Edge Probability p for the Strong Chromatic Number:
+Dense Case (Theorem 1.1(i)): It is assumed that p is significantly larger than (log⁴n / n)¹/³. The notation used is p ≫ (log⁴n / n)¹/³.
+Moderately Dense Case (Theorem 1.1(ii)): It is assumed that p is significantly larger than (log n / n)¹/². The notation used is p ≫ (log n / n)¹/².
+Conditions for the Existence of an Independent Transversal (Theorem 1.2):
+Sparse Case: It is assumed that the edge probability p is at least (log⁴n) / n, i.e., p ≥ (log⁴n) / n.
+Part Size: It is assumed that the vertex set is partitioned into disjoint subsets V_i where the size of each part is at least (1+o(1))Δ. 
+
+Here is the context directly proceeding the theorem you write:
+(\sigma \frac{\Delta}{\log
+  n}\big) = o(\Delta)$ neighbors in $V_j$, since $\sigma \leq \frac{2 \log n}{\log \log
+  n}$.  Also, by construction of $I_1$, every part whose index is not in $I_1$ has at most
+$\frac{\ep}{4} \Delta$ locally big vertices.  Hence the size of $V'_j$ is at least $|V_j|
+-(1+o(1)) \Delta - \frac{\ep}{4} \Delta \geq \frac{\ep}{2} \Delta$, as claimed.
+
+Let us say that a set $U_t$ satisfies property $\mathbf{Q}_t$ if for every $k \not \in
+I_1 \cup J_t$, all the vertices in $U_t$ that
+are not locally big with respect to $V_k$ have together at most
+$300 (\tau - t)\frac{\Delta}{\log n}$ neighbors in $V_k$.
+We need the following  analogue of Lemma \ref{lem:first-stage}.
+\begin{lemma}
+  \label{lem:second-stage}
+  Suppose $t > 1$, and $U_t$ is an independent transversal on $V'_{J_t}$ which satisfies
+  $\mathbf{Q}_t$.  Then we can extend $U_t$ to $U_{t-1}$, an independent transversal on
+  $V'_{J_{t-1}}$ which satisfies $\mathbf{Q}_{t-1}$.
+\end{lemma}
+We also postpone the proof of this lemma until Section \ref{sec:last-lemma}.
+Starting with $U_\tau = \emptyset$, we iterate this lemma until we obtain $U_1$, an
+independent transversal on $V'_{J_1}$ which satisfies $\mathbf{Q}_1$.
+Since $\tau \leq \frac{2 \log n}{\log \log n}$, this property implies that each $V_k$
+with $k \not \in I_1 \cup J_1$ has $O\big(\tau \frac{\Delta}{\log n}\big) = o(\Delta)$
+vertices with neighbors in $U_1$.
+
+Finally, let $K = [r] \setminus (I_1 \cup J_1)$.  Delete all neighbors of $T_1 \cup U_1$
+and all locally big vertices from every $V_k$ with $k\in K$, and denote the resulting sets
+by $V'_k$. All $V'_k$ will still have size at least $\big(1 + \frac{\ep}{2}\big) \Delta$,
+but now no vertex there has more than $\frac{\Delta}{\log n}$ neighbors in any single set $V_k'$.
+Thus, the following result from \cite{LS} implies that for sufficiently large $n$, there
+is an independent transversal on $V'_K$, which completes $T_1 \cup U_1$ into an
+independent transversal through all parts.
+  
+
+
+
+--- Model Generation for result #3 ---
+[Theorem 1.4 in \cite{LS}]
+  \label{thm:LS}
+  For every $0 < \ep \leq 1$, there exists an $\ep$-independent transversal in every
+  $G_{n,p}$ if $p \geq \frac{2 \log n}{\Delta n}$.

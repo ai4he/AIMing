@@ -1,0 +1,93 @@
+Below is the prompt for result #2:
+Given the following objects, assumptions and context from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects
+Set Partition of [n]: A collection of disjoint, non-empty subsets (called "blocks") whose union is the set {1, 2, ..., n}.
+Arc: In the visual representation of a set partition, an arc connects two consecutive elements within the same block.
+[n]: The set of integers {1, 2, ..., n}.
+[±n]: The set of integers {1, 2, ..., n, -1, -2, ..., -n}.
+Set Partition of Type A_n: A standard set partition of [n].
+Set Partition of Type B_n or C_n: A set partition of [±n] that is symmetric (if a block B is present, then -B is also present) and has at most one "zero block" (a block B_0 for which B_0 = -B_0).
+Set Partition of Type D_n: A set partition of type B_n where the zero block, if it exists, is not a simple pair {i, -i}.
+Crossing: A pair of arcs (i, j) and (i', j') such that i < i' < j < j'.
+Nesting: A pair of arcs (i, j) and (i', j') such that i < i' < j' < j.
+Non-crossing/Non-nesting Partition: A partition with zero crossings or zero nestings, respectively.
+Maximal Crossing/Nesting: A set of the largest possible size of arcs that are all mutually crossing or mutually nesting.
+Openers op(B): The set of all non-maximal elements in the blocks of a partition B.
+Closers cl(B): The set of all non-minimal elements in the blocks of a partition B.
+Opener-Closer Configuration: A pair of sets (O, C) that can be realized as the openers and closers of some set partition.
+Nesting Order (for Type C): The ordering 1 < 2 < ... < n < -n < ... < -2 < -1.
+Crossing Order (for Type C): The ordering 1 < 2 < ... < n < -1 < -2 < ... < -n.
+
+Assumptions
+Visualization Convention: Set partitions are visualized by placing the numbers on a line and drawing arcs above them to connect consecutive elements of each block.
+Classical Types: The paper focuses on set partitions corresponding to the classical Coxeter groups/reflection groups of types A, B, C, and D.
+Symmetry in Type B/C/D: Partitions of types B, C, and D must obey a specific symmetry property with respect to negation: if B is a block, then so is -B = {-b | b ∈ B}.
+Order-Dependent Definitions: The definitions of "crossing" and "nesting" for types other than A depend on specific, pre-defined orderings of the elements in [±n] (the "crossing order" and "nesting order").
+Arc Definition in Type C: In the visual diagrams for Type C partitions, arcs are drawn by connecting elements that are consecutive in the nesting order, even when the elements on the line are arranged in the crossing order. 
+
+Here is the context directly proceeding the theorem you write:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Crossings and nestings in set partitions of type $A$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:cross-nest-A}
+
+One of the goals of this article is to refine the following well known correspondences between
+non-crossing and non-nesting set partitions.  For ordinary set partitions, a
+\Dfn{crossing} consists of a pair of arcs $(i,j)$ and $(i',j')$ such that
+$i<i'<j<j'$:
+\begin{center}
+  \setlength{\unitlength}{20pt}
+  \begin{picture}(12,2.2)
+    \put(0,0){\hbox{$1$}}
+    \put(1,0){\hbox{$\ldots$}}
+    \put(2.5,0){\hbox{$i$}}
+    \put(3.5,0){\hbox{$<$}}
+    \put(4.75,0){\hbox{$i'$}}
+    \put(5.75,0){\hbox{$<$}}
+    \put(7,0){\hbox{$j$}}
+    \put(8,0){\hbox{$<$}}
+    \put(9.25,0){\hbox{$j'$}}
+    \put(10.25,0){\hbox{$\ldots$}}
+    \put(11.75,0){\hbox{$n$}}
+    \qbezier(2.9,0.7)(4.9,3.2)(6.9,0.7)
+    \qbezier(5.1,0.7)(7.1,3.2)(9.1,0.7)
+  \end{picture}
+  % \input{NCcounter.tex}
+\end{center}
+On the other hand, if $i<i'<j'<j$, we have a \Dfn{nesting}, pictorially:
+\begin{center}
+  \setlength{\unitlength}{20pt}
+  \begin{picture}(12,2.2)
+    \put(0,0){\hbox{$1$}}
+    \put(1,0){\hbox{$\ldots$}}
+    \put(2.5,0){\hbox{$i$}}
+    \put(3.5,0){\hbox{$<$}}
+    \put(4.75,0){\hbox{$i'$}}
+    \put(5.75,0){\hbox{$<$}}
+    \put(7,0){\hbox{$j'$}}
+    \put(8,0){\hbox{$<$}}
+    \put(9.25,0){\hbox{$j$}}
+    \put(10.25,0){\hbox{$\ldots$}}
+    \put(11.75,0){\hbox{$n$}}
+    \qbezier(2.9,0.7)(6.0,3.2)(9.1,0.7)
+    \qbezier(5.1,0.7)(6.0,2.2)(6.9,0.7)
+  \end{picture}
+  % \input{NNcounter.tex}
+\end{center}
+A set partition of $[n]$ is called \Dfn{non-crossing} (resp. \Dfn{non-nesting})
+if the number of crossings (resp. the number of nestings) equals $0$.
+
+It has been known for a long time that the numbers of non-crossing and
+non-nesting set-partitions of $[n]$ coincide.  More recently, Anisse Kasraoui
+and Jiang Zeng have shown in~\cite{KasraouiZeng2006} that much more is true:
+  
+
+
+
+--- Model Generation for result #2 ---
+[Kasraoui--Zeng]
+  \label{thm:KasraouiZeng}
+  The set of non-crossing set partitions of $[n]$ is in one-to-one
+  correspondence with the set of non-nesting set partitions of $[n]$.

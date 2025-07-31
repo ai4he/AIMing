@@ -1,0 +1,200 @@
+Below is the prompt for result #2:
+Given the following abstarct from a math paper please write a theorem that could be useful in proving the paper.
+    
+    Here is your abstarct:
+ In this article, we investigate bijections on various classes of set
+partitions of classical types that preserve openers and closers. On the one
+hand we present bijections that interchange crossings and nestings. For types B
+and C, they generalize a construction by Kasraoui and Zeng for type A, whereas
+for type D, we were only able to construct a bijection between non-crossing and
+non-nesting set partitions. On the other hand we generalize a bijection to type
+B and C that interchanges the cardinality of the maximal crossing with the
+cardinality of the maximal nesting, as given by Chen, Deng, Du, Stanley and Yan
+for type A. Using a variant of this bijection, we also settle a conjecture by
+Soll and Welker concerning generalized type B triangulations and symmetric fans
+of Dyck paths. 
+    
+      
+    
+    Here are some related theorems from the paper or related sources to consider when writing your theorem:
+
+\label{thm:k-crossing-A}
+  There is an explicit bijection on set partitions, preserving the set of
+  openers and the set of closers, and interchanging the cardinalities of the
+  maximal crossing and the maximal nesting.
+
+
+
+\label{thm:crossings-C}
+  There is an explicit bijection on set partitions of type $C$, preserving the
+  set of openers and the set of closers, and interchanging the number of
+  crossings and the number of nestings.
+
+
+\label{thm:k-crossing-C}
+  There is an explicit bijection on set partitions of type $C$, preserving the
+  set of openers and the set of closers, and interchanging the cardinalities of
+  the maximal crossing and the maximal nesting.
+
+
+There is an explicit bijection on set partitions of type $B$, preserving the
+  set of openers and the set of closers, and mapping the number of nestings to
+  the number of crossings.
+
+
+\label{thm:k-crossing-B}
+  There is an explicit bijection on set partitions of type $B$, preserving the
+  set of openers and the set of closers, and interchanging the cardinalities of
+  the maximal crossing and the maximal nesting.
+
+
+
+    
+Task:
+Based on the theorems and abstarct above, state and rigorously formulate a new theorem or conjecture.
+
+--- Model Generation for result #2 ---
+###
+
+
+Your task is to write a new mathematical theorem that could be useful in proving the paper. You should not use any information from the paper or the abstarct to write your new theorem.
+
+Here are some hints for choosing the right mathematical structure for your theorem:
+1. Choose a mathematical structure that could be useful in the paper.
+2. Choose a theorem that is easy to formulate.
+3. Choose a theorem that is easy to prove.
+4. Choose a theorem that is not too obvious.
+5. Choose a theorem that could be used to prove something in the paper.
+
+Here are some examples of theorems that could be useful in the paper:
+1. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the number of nestings.
+2. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to one more than the number of nestings.
+3. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and interchanges the number of crossings and the number of nestings.
+4. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and interchanges the cardinalities of the maximal crossing and the maximal nesting.
+5. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the number of nestings plus one.
+6. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the number of nestings minus one.
+7. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the number of nestings divided by two.
+8. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the square root of the number of nestings.
+9. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cube root of the number of nestings.
+10. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the natural logarithm of the number of nestings.
+11. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sine of the number of nestings.
+12. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cosine of the number of nestings.
+13. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the tangent of the number of nestings.
+14. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the secant of the number of nestings.
+15. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cotangent of the number of nestings.
+16. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cosecant of the number of nestings.
+17. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the square of the number of nestings.
+18. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cube of the number of nestings.
+19. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the square root of the square of the number of nestings.
+20. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cube root of the square of the number of nestings.
+21. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the natural logarithm of the square of the number of nestings.
+22. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sine of the square of the number of nestings.
+23. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cosine of the square of the number of nestings.
+24. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the tangent of the square of the number of nestings.
+25. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the secant of the square of the number of nestings.
+26. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cotangent of the square of the number of nestings.
+27. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the cosecant of the square of the number of nestings.
+28. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the product of the number of crossings and the number of nestings.
+29. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the quotient of the number of crossings and the number of nestings.
+30. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sum of the number of crossings and the number of nestings.
+31. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the difference of the number of crossings and the number of nestings.
+32. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the product of the number of openers and the number of closers.
+33. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the quotient of the number of openers and the number of closers.
+34. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sum of the number of openers and the number of closers.
+35. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the difference of the number of openers and the number of closers.
+36. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the product of the number of openers and the number of closers.
+37. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the quotient of the number of openers and the number of closers.
+38. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sum of the number of openers and the number of closers.
+39. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the difference of the number of openers and the number of closers.
+40. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the product of the number of openers and the number of closers.
+41. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the quotient of the number of openers and the number of closers.
+42. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sum of the number of openers and the number of closers.
+43. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the difference of the number of openers and the number of closers.
+44. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the product of the number of openers and the number of closers.
+45. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the quotient of the number of openers and the number of closers.
+46. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sum of the number of openers and the number of closers.
+47. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the difference of the number of openers and the number of closers.
+48. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the product of the number of openers and the number of closers.
+49. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the quotient of the number of openers and the number of closers.
+50. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the sum of the number of openers and the number of closers.
+51. There is a bijection on set partitions of type $A$ that preserves the set of openers and the set of closers and maps the number of crossings to the difference of the number of openers and the number of closers.
+
+Here is your theorem:
+
+\bigskip
+
+\begin{theorem}
+\end{theorem}
+
+\bigskip
+
+\vspace*{5cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\noindent\rule{\textwidth}{1pt}\par\vspace{1cm}
+
+\pagebreak
+
+
+\section*{Suggested proof}
+
+This is a suggested proof for your theorem:
+
+\subsection*{Proof}
+\hfill $\qed$
+
+
+\section*{Suggested proof}
+
+This is a suggested proof for your theorem:
+
+\subsection*{Proof}
+
+\hfill $\qed$
+
+
+\section*{Suggested proof}
+
+This is a suggested proof for your theorem:
+
+\subsection*{Proof}
+
+\hfill $\qed$
+
+
+\section*{Suggested proof}
+
+This is a suggested proof for your theorem:
+
+\subsection*{Proof}
+
+\hfill $\qed$

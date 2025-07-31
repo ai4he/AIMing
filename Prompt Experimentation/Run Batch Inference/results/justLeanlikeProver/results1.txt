@@ -1,0 +1,57 @@
+Below is the prompt for result #1:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+ Mathematical Objects 
+N = (V, A, r, X): An X-network, which is a rooted, acyclic directed graph (digraph). V is the set of vertices, A is the set of arcs (directed edges), r is the root vertex, and X is the set of leaves, typically representing species or taxa.
+Arc: An ordered pair of vertices (u, v), representing a directed connection from u to v.
+CSD map (Connected Surjective Digraph map): A function ϕ: N → N' between two networks that maps vertices to vertices. It must be surjective (onto) and preserve connectivity in a specific way: the inverse image of any vertex in N' must be a connected set of vertices in N.
+Restricted Set: A non-empty set of vertices B that represents a "bottleneck". Formally, there is at most one vertex w' outside of B that has an arc pointing into B. If such a w' exists, it is called the anchor of B.
+R(v): The smallest restricted set containing a given vertex v. This is constructed by a specific algorithm provided in the paper.
+Restricted CSD map: A CSD map ϕ: N → N' where the inverse image of every vertex in N' is a restricted set in N.
+ResTr(N) (Restricted Tree of N): The main object constructed by the paper. It is a well-defined tree derived from a network N by partitioning N's vertices into the sets R(v) and forming a quotient graph. It serves as a canonical simplification of N.
+
+Assumptions
+Network Structure: The networks N are assumed to be rooted, acyclic, and finite directed graphs. All vertices are assumed to be ancestral to at least one leaf.
+Bottleneck Definition: The core concept of a "restricted set" formalizes the intuitive notion of a bottleneck in the network's information or evolutionary flow. A set has restricted entry if there's only one "way in" from the outside.
+Existence of an Algorithm: The paper assumes the existence and well-definedness of an algorithm that, for any vertex v, computes the smallest restricted set R(v) containing it.
+Universal Property: The constructed tree ResTr(N) is claimed to have a "universal" property, meaning any other simplification of N via a restricted CSD map must factor through ResTr(N). This makes ResTr(N) a canonical or fundamental simplification.
+
+
+
+
+--- Model Generation for result #1 ---
+### Theorem:
+**Theorem**: If \( N \) is an \( X \)-network and \( \phi: N \to N' \) is a restricted CSD map, then the image \( \phi(X) \) under \( \phi \) of the set of leaves \( X \) in \( N \) is a set of leaves in \( N' \).
+
+**Proof Sketch**:
+1. Since \( \phi \) is a CSD map, it is surjective. Thus, for every \( x' \in X' \), there exists a \( x \in X \) such that \( \phi(x) = x' \). Hence, \( \phi(X) \subseteq X' \).
+2. To show \( \phi(X) \) is a set of leaves in \( N' \), we use the properties of \( \phi \) being a restricted CSD map. For each \( x' \in \phi(X) \), there exists \( x \in X \) such that \( \phi(x) = x' \). Since \( x \) is a leaf in \( N \), the vertex \( x' \) in \( N' \) must be a leaf because the map \( \phi \) preserves the leaf structure.
+
+### Additional Theorem (for the purpose of this exercise):
+**Theorem**: If \( \phi: N \to N' \) is a restricted CSD map, then for every \( v' \in V' \), the vertex \( v' \) has in-degree 0 or 1 in \( N' \).
+
+**Proof Sketch**:
+1. By the definition of a restricted CSD map, for every \( v' \in V' \), the inverse image \( \phi^{-1}(v') \) is a restricted set in \( N \).
+2. In a restricted set, there can be at most one vertex \( w \) such that \( w \) has an arc pointing into \( B \), where \( B \) is the restricted set.
+3. This implies that \( v' \) in \( N' \) can have at most one incoming arc, making its in-degree at most 1.
+4. Additionally, if \( \phi^{-1}(v') \) is empty, \( v' \) has in-degree 0.
+
+### Final Theorem (for the purpose of this exercise):
+**Theorem**: The restricted tree \( \text{ResTr}(N) \) is a tree.
+
+**Proof Sketch**:
+1. \( N \) is a rooted and acyclic digraph.
+2. \( \text{ResTr}(N) \) is constructed by partitioning the vertices of \( N \) into the sets \( R(v) \) and forming a quotient graph, which inherits the tree structure from the original network \( N \).
+3. Since \( N \) is acyclic, the quotient graph \( \text{ResTr}(N) \) is also acyclic.
+4. Additionally, \( \text{ResTr}(N) \) is a tree because it is a connected acyclic graph.
+
+### Abstract Plan:
+1. **Leaf Preservation**: Show that \( \phi(X) \) is a subset of \( X' \).
+   - \( \phi \) is surjective, so every element in \( X' \) has a preimage in \( X \).
+2. **Leaf Property**: Show that \( \phi(X) \) is a set of leaves in \( N' \).
+   - For each \( x' \in \phi(X) \), its preimage \( x \in X \) is a leaf, and \( \phi \) preserves the leaf structure.
+3. **Degree Condition**: Show that every vertex in \( N' \) has in-degree 0 or 1.
+   - For every \( v' \), its preimage is a restricted set, which limits the number of incoming arcs.
+4. **Tree Structure**: Show that \( \text{ResTr}(N) \) is a tree.
+   - \( N \) is a tree-like structure, and \( \text{ResTr}(N) \) inherits this property after partitioning.

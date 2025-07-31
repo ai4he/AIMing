@@ -1,0 +1,64 @@
+Below is the prompt for result #1:
+Given the following objects, assumptions and context from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+ Mathematical Objects
+N = (V, A, r, X): An X-network, which is a rooted, acyclic directed graph (digraph). V is the set of vertices, A is the set of arcs (directed edges), r is the root vertex, and X is the set of leaves, typically representing species or taxa.
+Arc: An ordered pair of vertices (u, v), representing a directed connection from u to v.
+CSD map (Connected Surjective Digraph map): A function ϕ: N → N' between two networks that maps vertices to vertices. It must be surjective (onto) and preserve connectivity in a specific way: the inverse image of any vertex in N' must be a connected set of vertices in N.
+Restricted Set: A non-empty set of vertices B that represents a "bottleneck". Formally, there is at most one vertex w' outside of B that has an arc pointing into B. If such a w' exists, it is called the anchor of B.
+R(v): The smallest restricted set containing a given vertex v. This is constructed by a specific algorithm provided in the paper.
+Restricted CSD map: A CSD map ϕ: N → N' where the inverse image of every vertex in N' is a restricted set in N.
+ResTr(N) (Restricted Tree of N): The main object constructed by the paper. It is a well-defined tree derived from a network N by partitioning N's vertices into the sets R(v) and forming a quotient graph. It serves as a canonical simplification of N.
+
+Assumptions
+Network Structure: The networks N are assumed to be rooted, acyclic, and finite directed graphs. All vertices are assumed to be ancestral to at least one leaf.
+Bottleneck Definition: The core concept of a "restricted set" formalizes the intuitive notion of a bottleneck in the network's information or evolutionary flow. A set has restricted entry if there's only one "way in" from the outside.
+Existence of an Algorithm: The paper assumes the existence and well-definedness of an algorithm that, for any vertex v, computes the smallest restricted set R(v) containing it.
+Universal Property: The constructed tree ResTr(N) is claimed to have a "universal" property, meaning any other simplification of N via a restricted CSD map must factor through ResTr(N). This makes ResTr(N) a canonical or fundamental simplification.
+
+Here is the context directly proceeding the theorem you write:
+ human population forms a tight cluster.  If $N$ is successively cluster-distinct, the same argument would suggest that it forms a restricted set.
+
+A restricted CSD map $f: N \to N'$ is \emph{universal (for restricted maps)} provided that given any restricted map $g: N \to N''$  there is a unique restricted CSD map $h: N' \to N''$ such that $g = h \circ f$.
+
+We shall see below that the natural projection map $\phi: N \to ResTr(N)$ is universal for restricted maps.
+
+The first result is that the image of a restricted map is always a tree.
+
+\begin{thm}%4.1
+Let $N=(V,A,r,X)$ be an acyclic $X$-network and let $T = (V',A',r',X)$ be an $X$-network.  Assume $f: N \to T$ is a restricted CSD map.  Then $T$ is a tree.
+\end{thm}
+
+\begin{proof}
+We show that $T$ has no hybrid vertices.  Suppose otherwise, so we may assume $V'$ contains distinct vertices $u_1'$, $u_2'$, and $u_3'$ while $A'$ contains arcs $(u_1',u_3')$, $(u_2', u_3')$.  Let $B_i = f^{-1}(u_i')$.  Since $f$ is restricted, each $B_i$ is a restricted set.  Since $f$ is a CSD map, there exist $u_1 \in B_1$, $w_1 \in B_3$, $u_2 \in B_2$, and  $w_2 \in B_3$ such that $(u_1,w_1)$ and $(u_2,w_2)$ are arcs of $N$.  Note $u_1 \notin B_3$ and $u_2 \notin B_3$.  Since $B_3$ is restricted, it follows $u_1 = Anc(B_3)$ and $u_2 = Anc(B_3)$.  Hence $u_1 = u_2$ so $u_1' = f(u_1) = f(u_2) = u_2'$, a contradiction.
+\end{proof}
+
+
+\begin{cor}%Cor 4.2.
+Let $N=(V,A,r,X)$ be an acyclic $X$-network.  Then $ResTr(N)$ is an $X$-tree.
+\end{cor}
+
+\begin{proof}
+The natural projection map $\phi: N \to ResTr(N)$ is a restricted CSD map.
+\end{proof}
+
+
+The next result shows that many relationships among leaves observed in $ResTr(N)$ are also present in $N$.
+
+\begin{cor}%Cor 4.3.
+Let $N=(V,A,r,X)$ be an acyclic $X$-network.  There is a wired lift of $ResTr(N)$ into $N$.
+\end{cor}
+
+\begin{proof}
+This follows from Theorem 2.5.
+\end{proof}
+
+
+Restricted maps have interesting functorial properties, as seen in the next results. 
+
+
+
+--- Model Generation for result #1 ---
+%5.1
+Let $N=(V,A,r,X)$ be an acyclic $X$-network and let $T = (V',A',r',X)$ be an $X$-tree.  Assume $f: N \to T$ is a restricted CSD map.  Then $f$ is a wired map.

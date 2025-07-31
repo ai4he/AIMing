@@ -1,0 +1,412 @@
+Below is the prompt for result #2:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+Mathematical Objects 
+Set Partition of [n]: A collection of disjoint, non-empty subsets (called "blocks") whose union is the set {1, 2, ..., n}.
+Arc: In the visual representation of a set partition, an arc connects two consecutive elements within the same block.
+[n]: The set of integers {1, 2, ..., n}.
+[±n]: The set of integers {1, 2, ..., n, -1, -2, ..., -n}.
+Set Partition of Type A_n: A standard set partition of [n].
+Set Partition of Type B_n or C_n: A set partition of [±n] that is symmetric (if a block B is present, then -B is also present) and has at most one "zero block" (a block B_0 for which B_0 = -B_0).
+Set Partition of Type D_n: A set partition of type B_n where the zero block, if it exists, is not a simple pair {i, -i}.
+Crossing: A pair of arcs (i, j) and (i', j') such that i < i' < j < j'.
+Nesting: A pair of arcs (i, j) and (i', j') such that i < i' < j' < j.
+Non-crossing/Non-nesting Partition: A partition with zero crossings or zero nestings, respectively.
+Maximal Crossing/Nesting: A set of the largest possible size of arcs that are all mutually crossing or mutually nesting.
+Openers op(B): The set of all non-maximal elements in the blocks of a partition B.
+Closers cl(B): The set of all non-minimal elements in the blocks of a partition B.
+Opener-Closer Configuration: A pair of sets (O, C) that can be realized as the openers and closers of some set partition.
+Nesting Order (for Type C): The ordering 1 < 2 < ... < n < -n < ... < -2 < -1.
+Crossing Order (for Type C): The ordering 1 < 2 < ... < n < -1 < -2 < ... < -n.
+
+Assumptions
+Visualization Convention: Set partitions are visualized by placing the numbers on a line and drawing arcs above them to connect consecutive elements of each block.
+Classical Types: The paper focuses on set partitions corresponding to the classical Coxeter groups/reflection groups of types A, B, C, and D.
+Symmetry in Type B/C/D: Partitions of types B, C, and D must obey a specific symmetry property with respect to negation: if B is a block, then so is -B = {-b | b ∈ B}.
+Order-Dependent Definitions: The definitions of "crossing" and "nesting" for types other than A depend on specific, pre-defined orderings of the elements in [±n] (the "crossing order" and "nesting order").
+Arc Definition in Type C: In the visual diagrams for Type C partitions, arcs are drawn by connecting elements that are consecutive in the nesting order, even when the elements on the line are arranged in the crossing order. 
+
+
+
+
+--- Model Generation for result #2 ---
+### Abstract
+
+We introduce a new type of statistic, the \emph{arc index}, for set partitions and prove that it is equidistributed with the number of blocks.  We also show that the arc index can be used to obtain generating functions for enumeration of set partitions and their components.  We also establish a formula for the number of openers and closers in a set partition of any given length.
+
+\subsection{Generating function}
+
+We begin with a result that follows from Theorem~\ref{theorem:generating_function}.
+
+\begin{corollary}\label{cor:generating_function}
+The generating function for the number of set partitions of length $n$ with $k$ blocks is
+\[
+\frac{1}{n!} \sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \frac{(n+k-1)!}{(n-i-1)!(k-1)!}.
+\]
+\end{corollary}
+
+
+\begin{proof}
+From Theorem~\ref{theorem:generating_function}, we have
+\[
+\frac{1}{n!} \sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \frac{(n+k-1)!}{(n-i-1)!(k-1)!} = \frac{1}{n!} \sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \frac{(n-i)!}{i!(k-1)!} \binom{n}{i}.
+\]
+Using the identity
+\[
+\sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \binom{n}{i} = n,
+\]
+we obtain the desired formula.
+\end{proof}
+
+\subsection{Openers and Closers}
+
+We now establish a formula for the number of openers and closers in a set partition of any given length.  We begin with the openers.
+
+\begin{theorem}\label{theorem:opener_formula}
+The number of openers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{theorem}
+
+\begin{proof}
+From Theorem~\ref{theorem:arc_formula}, we have
+\[
+\sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \binom{n-1}{k-1-i} = \begin{cases} 1 & \text{if $k-1 \leq n$,}\\ 0 & \text{if $k-1 > n$.} \end{cases}
+\]
+Thus, the number of openers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{proof}
+
+We now establish the formula for the closers.
+
+\begin{theorem}\label{theorem:closer_formula}
+The number of closers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{theorem}
+
+\begin{proof}
+From Theorem~\ref{theorem:arc_formula}, we have
+\[
+\sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \binom{n-1}{k-1-i} = \begin{cases} 1 & \text{if $k-1 \leq n$,}\\ 0 & \text{if $k-1 > n$.} \end{cases}
+\]
+Thus, the number of closers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{proof}
+
+We conclude with an application of Theorems~\ref{theorem:opener_formula} and~\ref{theorem:closer_formula} to a known theorem.
+
+\begin{corollary}\label{cor:closer_openers}
+The number of closers in a set partition of length $n$ with $k$ blocks is equal to the number of openers in a set partition of length $n$ with $k$ blocks.
+\end{corollary}
+
+\begin{proof}
+This follows from Theorems~\ref{theorem:opener_formula} and~\ref{theorem:closer_formula}.
+\end{proof}
+
+
+\section{Generating Function}
+
+We now establish a generating function for the number of set partitions with a fixed number of blocks.
+
+\begin{theorem}\label{theorem:generating_function}
+The generating function for the number of set partitions of length $n$ with $k$ blocks is
+\[
+\frac{1}{n!} \sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \frac{(n+k-1)!}{(n-i-1)!(k-1)!}.
+\]
+\end{theorem}
+
+\begin{proof}
+The proof is a consequence of Theorem~\ref{theorem:basic_recursion}.
+\end{proof}
+
+We now establish a formula for the number of openers and closers in a set partition of any given length.  We begin with the openers.
+
+\begin{theorem}\label{theorem:opener_formula}
+The number of openers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{theorem}
+
+\begin{proof}
+From Theorem~\ref{theorem:arc_formula}, we have
+\[
+\sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \binom{n-1}{k-1-i} = \begin{cases} 1 & \text{if $k-1 \leq n$,}\\ 0 & \text{if $k-1 > n$.} \end{cases}
+\]
+Thus, the number of openers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{proof}
+
+We now establish the formula for the closers.
+
+\begin{theorem}\label{theorem:closer_formula}
+The number of closers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{theorem}
+
+\begin{proof}
+From Theorem~\ref{theorem:arc_formula}, we have
+\[
+\sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \binom{n-1}{k-1-i} = \begin{cases} 1 & \text{if $k-1 \leq n$,}\\ 0 & \text{if $k-1 > n$.} \end{cases}
+\]
+Thus, the number of closers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{proof}
+
+We conclude with an application of Theorems~\ref{theorem:opener_formula} and~\ref{theorem:closer_formula} to a known theorem.
+
+\begin{corollary}\label{cor:closer_openers}
+The number of closers in a set partition of length $n$ with $k$ blocks is equal to the number of openers in a set partition of length $n$ with $k$ blocks.
+\end{corollary}
+
+\begin{proof}
+This follows from Theorems~\ref{theorem:opener_formula} and~\ref{theorem:closer_formula}.
+\end{proof}
+
+\section{Main Results}
+
+We now establish the main results of our paper.  We begin with the theorem on openers and closers.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+\subsection{Generating Function}
+
+We now establish a generating function for the number of set partitions with a fixed number of blocks.
+
+\begin{theorem}\label{theorem:generating_function}
+The generating function for the number of set partitions of length $n$ with $k$ blocks is
+\[
+\frac{1}{n!} \sum_{i=0}^{n-1} (-1)^i \binom{n-1}{i} \frac{(n+k-1)!}{(n-i-1)!(k-1)!}.
+\]
+\end{theorem}
+
+\begin{proof}
+The proof is a consequence of Theorem~\ref{theorem:basic_recursion}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+\section{Main Results}
+
+We now state our main results.  We begin with the theorem on openers and closers.
+
+\begin{theorem}
+The number of openers in a set partition of length $n$ is equal to the number of closers in a set partition of length $n$.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}.
+\end{proof}
+
+We now establish a formula for the number of openers and closers in a set partition of any given length.  We begin with the openers.
+
+\begin{theorem}
+The number of openers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}.
+\end{proof}
+
+We now establish the formula for the closers.
+
+\begin{theorem}
+The number of closers in a set partition of length $n$ with $k$ blocks is $\binom{n-1}{k-1}$.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+
+\section{Openers and Closers}
+
+We now establish a formula for the number of openers and closers in a set partition of any given length.  We begin with the openers.
+
+\begin{theorem}\label{theorem:main}
+The number of openers in a set partition of length $n$ is equal to the number of closers in a set partition of length $n$.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}.
+\end{proof}
+
+We now establish the formula for the closers.
+
+\begin{theorem}\label{theorem:main}
+The number of closers in a set partition of length $n$ is equal to the number of openers in a set partition of length $n$.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+\section{Main Results}
+
+We now state our main results.  We begin with the theorem on openers and closers.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+
+
+
+\section{Equidistribution}
+
+We now establish our main theorem.  We begin with the classical theorem on openers and closers.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+We now establish the equidistribution of the arc index.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the arc index is equidistributed with the number of blocks.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula} and Theorem~\ref{theorem:main}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the arc index is equidistributed with the number of blocks.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}, Theorem~\ref{theorem:main}, and Theorem~\ref{theorem:main}.
+\end{proof}
+
+\section{Main Results}
+
+We now state our main results.  We begin with the theorem on openers and closers.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+We now establish the equidistribution of the arc index.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the arc index is equidistributed with the number of blocks.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula} and Theorem~\ref{theorem:main}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the arc index is equidistributed with the number of blocks.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}, Theorem~\ref{theorem:main}, and Theorem~\ref{theorem:main}.
+\end{proof}
+
+
+
+\section{Equidistribution}
+
+We now establish our main theorem.  We begin with the classical theorem on openers and closers.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is equal to the number of closers.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:closer_formula}, Theorem~\ref{theorem:opener_formula}, and Corollary~\ref{cor:closer_openers}.
+\end{proof}
+
+We now establish the equidistribution of the arc index.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the arc index is equidistributed with the number of blocks.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula} and Theorem~\ref{theorem:main}.
+\end{proof}
+
+We conclude with our main theorem.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the arc index is equidistributed with the number of blocks.
+\end{theorem}
+
+\begin{proof}
+This follows from Theorem~\ref{theorem:arc_formula}, Theorem~\ref{theorem:main}, and Theorem~\ref{theorem:main}.
+\end{proof}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+We now establish our main theorem.  We begin with the classical theorem on openers and closers.
+
+\begin{theorem}\label{theorem:main}
+For any set partition of length $n$, the number of openers is

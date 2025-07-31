@@ -1,0 +1,67 @@
+Below is the prompt for result #4:
+Given the following objects and assumptions from a math paper please write a theorem that could be useful in proving the paper.
+
+    Here are the objects and assumptions in the paper, you dont need to use all of them, but your theorem should be grounded in some of these elements:
+ Mathematical Objects 
+n: A large integer representing the dimension of the matrices.
+M_n: An n x n complex matrix whose entries are independent discrete random variables. This is the main object of study.
+Singular Matrix: A square matrix whose determinant is zero. The probability of this event is the central quantity to be bounded.
+p: A constant between 0 and 1, representing an upper bound on the probability that a random variable takes any single value.
+r: A constant positive integer, used as an exponent in the main property definition.
+p-bounded of exponent r: A key technical property defined for the distribution of the random entries of the matrix M_n. A random variable ξ is p-bounded of exponent r if there is no value z_0 such that P(ξ = z_0) > p, and for any r distinct values z_1, ..., z_r, the probability P(ξ ∈ {z_1, ..., z_r}) is bounded away from 1 by a constant.
+Integral Domain of Characteristic Zero: An algebraic structure (like the integers or complex numbers) where the main results hold.
+
+Assumptions
+Large n: The results are asymptotic, holding as n (the matrix dimension) tends to infinity.
+Independent Entries: The entries of the random matrix M_n are assumed to be mutually independent random variables. They are not required to be identically distributed.
+Discrete Distribution: The random entries of M_n take values from a discrete set of complex numbers.
+p-bounded Property: The main theorem assumes that the distributions of the matrix entries satisfy the p-bounded of exponent r property for some constants p and r. This property ensures that the random variables are "not too concentrated" on any single value or on any small set of values.
+
+
+
+
+--- Model Generation for result #4 ---
+### Theorem
+
+**Theorem:** Let $M_n$ be an $n \times n$ complex matrix whose entries are independent discrete random variables with a probability $p$ of taking any single value and an exponent $r$ property. Then the probability that $\det (M_n) = 0$ is at most $Cp^n n^{-r}$, where $C$ is a constant.
+
+**Proof Outline:**
+
+The key step in the proof is to bound the number of $r$-tuples of elements in $M_n$ such that their product is zero. The theorem follows by the union bound.
+
+### Detailed Proof
+
+We need to bound the probability that $\det (M_n) = 0$. 
+
+\begin{lemma}
+The probability that $\det (M_n) = 0$ is at most $Cpn^{n-r}$, where $C$ is a constant.
+\end{lemma}
+
+\begin{proof}
+Let $W(M_n)$ denote the event that $\det (M_n) = 0$. 
+
+Consider a fixed set of $r$ rows of $M_n$. The number of ways these rows can be linearly dependent is at most $pn^{n-r}$. The probability that one of these $r$-tuples of rows is linearly dependent is at most $pn^{-r}$.
+
+But if any $r$ rows are linearly dependent, then $\det (M_n) = 0$. So the probability that any of these $r$-tuples of rows is linearly dependent is at most $pn^{-r}$.
+
+By the union bound, the probability that $\det (M_n) = 0$ is at most $Cpn^{-r}n^{n-r}$.
+\end{proof}
+
+The result follows by the lemma.
+
+### Abstract Proof Plan
+
+1. Define the event $W(M_n) = \{\det (M_n) = 0\}$.
+2. By the union bound, bound the probability of $W(M_n)$ using the probability of the event that any of the $r$-tuples of rows is linearly dependent.
+3. Bound the probability of any $r$-tuples of rows being linearly dependent.
+4. Conclude that the probability of $W(M_n)$ is at most $Cpn^{-r}n^{n-r}$.
+
+### Lean4 Proof Sketch
+
+```lean4
+theorem main_theorem : 
+  ∀ (M_n : Matrix (Fin n) (Fin n) ℂ), 
+    M_n.det = 0 → 
+    (∃ (C : ℝ), P[M_n.det = 0] ≤ C * p^n * n^{-r}) := by
+  sorry
+```
