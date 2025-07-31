@@ -1,3 +1,11 @@
-This Folder Includes all files surrounding my prompt experimentation. 
-It's divided into a folder for running inference and testing the fine tuned models and another folder about automating the prompt creation process from just the context of a paper.
-The prompts used and results generated  y them can be found in the results folder inside the Run Batch Inference folder.
+
+Prompt Experimentation
+This directory contains all my files relating prompt engineering, from automated creation to model inference and result analysis.
+
+Directory Structure
+.
+├── Run Batch Inference/
+│   ├── results/          # Contains all prompts and their generated outputs
+│   └── ...               # Scripts and files for running inference
+└── Automated Prompt Generation/
+    └── ...               # Scripts for automating prompt creation from papers
